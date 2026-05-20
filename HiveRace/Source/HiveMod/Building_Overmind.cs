@@ -122,6 +122,18 @@ namespace HiveMod
                     Find.WindowStack.Add(new Window_SpawnHiveUnit(this));
                 }
             };
+
+            // Button to open Evolution UI
+            yield return new Command_Action
+            {
+                defaultLabel = "Evolution",
+                defaultDesc = "Open the evolution menu to spend Energy and research new parts.",
+                icon = ContentFinder<Texture2D>.Get("UI/Designators/Research", true), // placeholder icon
+                action = () =>
+                {
+                    Find.WindowStack.Add(new Window_HiveEvolution(this));
+                }
+            };
         }
     }
 }

@@ -41,32 +41,19 @@
   </ThingDef>
 
   <ThingDef ParentName="Hive_UnitBase">
-    <defName>Hive_Worker</defName>
-    <label>worker</label>
-    <description>A drone designed for gathering resources and expanding the hive.</description>
+    <defName>Hive_Unit</defName>
+    <label>hive unit</label>
+    <description>A generic, undeveloped biological construct of the Hive. It is very weak until mutated with specialized parts.</description>
     <statBases>
-      <MoveSpeed>5.5</MoveSpeed>
+      <MoveSpeed>3.0</MoveSpeed>
       <GlobalLearningFactor>0</GlobalLearningFactor>
-      <WorkSpeedGlobal>1.5</WorkSpeedGlobal>
+      <WorkSpeedGlobal>0.5</WorkSpeedGlobal> <!-- Bad at working by default -->
+      <ArmorRating_Blunt>0.0</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.0</ArmorRating_Sharp>
     </statBases>
     <race>
-      <baseBodySize>0.8</baseBodySize>
-      <baseHealthScale>0.8</baseHealthScale>
-    </race>
-  </ThingDef>
-
-  <ThingDef ParentName="Hive_UnitBase">
-    <defName>Hive_Soldier</defName>
-    <label>soldier</label>
-    <description>A robust biological weapon built to defend the hive.</description>
-    <statBases>
-      <MoveSpeed>4.0</MoveSpeed>
-      <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.8</ArmorRating_Sharp>
-    </statBases>
-    <race>
-      <baseBodySize>1.2</baseBodySize>
-      <baseHealthScale>1.5</baseHealthScale>
+      <baseBodySize>1.0</baseBodySize>
+      <baseHealthScale>0.5</baseHealthScale> <!-- Very squishy by default -->
     </race>
   </ThingDef>
 </Defs>
