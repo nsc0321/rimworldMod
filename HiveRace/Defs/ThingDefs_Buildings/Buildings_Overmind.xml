@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>Building_HiveOvermind</defName>
+    <label>Overmind</label>
+    <description>The central core of the Hive. It spreads creep, gathers energy, and orchestrates the hive's units.</description>
+    <thingClass>HiveMod.Building_Overmind</thingClass>
+    <graphicData>
+      <!-- Placeholder texture (vanilla psychic emanator or something simple) -->
+      <texPath>Things/Building/Misc/PsychicEmanator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>1.0</fillPercent>
+    <statBases>
+      <MaxHitPoints>1500</MaxHitPoints>
+      <WorkToBuild>10000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Beauty>-10</Beauty>
+    </statBases>
+    <size>(3,3)</size>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,2)</interactionCellOffset>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <comps>
+      <!-- Can add standard comps here if needed -->
+    </comps>
+    <designationCategory>Misc</designationCategory> <!-- Temporary tab before we make a custom one -->
+  </ThingDef>
+</Defs>

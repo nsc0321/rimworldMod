@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <PawnKindDef>
+    <defName>HiveKind_Worker</defName>
+    <label>worker</label>
+    <race>Hive_Worker</race>
+    <combatPower>30</combatPower>
+    <isFighter>false</isFighter>
+    <defaultFactionType>PlayerColony</defaultFactionType> <!-- Starts belonging to player for now -->
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.2</drawSize>
+          <color>(100, 150, 100)</color>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <PawnKindDef>
+    <defName>HiveKind_Soldier</defName>
+    <label>soldier</label>
+    <race>Hive_Soldier</race>
+    <combatPower>80</combatPower>
+    <isFighter>true</isFighter>
+    <defaultFactionType>PlayerColony</defaultFactionType>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Spelopede/Spelopede</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.8</drawSize>
+          <color>(150, 100, 100)</color>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+</Defs>

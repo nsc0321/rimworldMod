@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>Building_CreepTumor</defName>
+    <label>creep tumor</label>
+    <description>A fleshy node that extends the range of the Hive's creep. Must be built on existing creep.</description>
+    <thingClass>Building</thingClass> <!-- We will use a custom class later if it spreads creep actively, but for now just Building -->
+    <graphicData>
+      <texPath>Things/Item/Resource/Meat/Meat_Human</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.2</fillPercent>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1500</WorkToBuild>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <costList>
+      <Hive_Biomass>15</Hive_Biomass>
+    </costList>
+    <designationCategory>HiveStructures</designationCategory>
+    <placeWorkers>
+      <li>HiveMod.PlaceWorker_OnCreep</li>
+    </placeWorkers>
+  </ThingDef>
+</Defs>

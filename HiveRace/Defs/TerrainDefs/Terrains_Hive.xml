@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <TerrainDef>
+    <defName>Hive_Creep</defName>
+    <label>creep</label>
+    <description>A viscous, biological layer of living tissue. It provides nourishment and speed to Hive units, while disgusting others.</description>
+    <texturePath>Terrain/Surfaces/Gravel</texturePath> <!-- Placeholder texture (vanilla) -->
+    <edgeType>Fade</edgeType>
+    <renderPrecedence>340</renderPrecedence>
+    <statBases>
+      <Beauty>-2</Beauty>
+      <Cleanliness>-1</Cleanliness>
+    </statBases>
+    <pathCost>0</pathCost>
+    <fertility>0</fertility>
+    <affordances>
+      <li>Light</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+      <li>GrowSoil</li>
+    </affordances>
+    <generatedFilth>Filth_Slime</generatedFilth>
+    <filthAcceptanceMask>
+      <li>Unnatural</li>
+    </filthAcceptanceMask>
+  </TerrainDef>
+</Defs>

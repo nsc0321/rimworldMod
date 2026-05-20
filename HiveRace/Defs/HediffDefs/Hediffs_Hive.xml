@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef>
+    <defName>Hediff_CreepBuff</defName>
+    <label>on creep</label>
+    <description>This unit is standing on creep, granting it increased speed and combat capabilities.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(150, 255, 150)</defaultLabelColor>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>1.5</MoveSpeed>
+          <MeleeDodgeChance>5</MeleeDodgeChance>
+          <MeleeHitChance>5</MeleeHitChance>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <!-- Automatically removes the buff if not refreshed quickly -->
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60</disappearsAfterTicks>
+        <showRemainingTime>false</showRemainingTime>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

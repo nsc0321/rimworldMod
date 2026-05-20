@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="BasePawn">
+    <defName>Hive_UnitBase</defName>
+    <label>hive unit</label>
+    <description>A biological construct of the Hive.</description>
+    <statBases>
+      <MoveSpeed>4.5</MoveSpeed>
+      <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+      <MeatAmount>0</MeatAmount>
+      <LeatherAmount>0</LeatherAmount>
+      <ToxicResistance>1</ToxicResistance>
+    </statBases>
+    <race>
+      <fleshType>Insectoid</fleshType>
+      <bloodDef>Filth_BloodInsect</bloodDef>
+      <needsRest>false</needsRest>
+      <hasGenders>false</hasGenders>
+      <foodType>OmnivoreAnimal, AnimalProduct</foodType>
+      <lifeExpectancy>5</lifeExpectancy>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>Mechanoid</thinkTreeMain>
+      <thinkTreeConstant>MechanoidConstant</thinkTreeConstant>
+      <body>BeetleLike</body>
+      <baseBodySize>1.0</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Megascarab_Wounded</soundWounded>
+          <soundDeath>Pawn_Megascarab_Death</soundDeath>
+          <soundCall>Pawn_Megascarab_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+    <comps>
+      <li Class="HiveMod.CompProperties_HiveUnit" />
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="Hive_UnitBase">
+    <defName>Hive_Worker</defName>
+    <label>worker</label>
+    <description>A drone designed for gathering resources and expanding the hive.</description>
+    <statBases>
+      <MoveSpeed>5.5</MoveSpeed>
+      <GlobalLearningFactor>0</GlobalLearningFactor>
+      <WorkSpeedGlobal>1.5</WorkSpeedGlobal>
+    </statBases>
+    <race>
+      <baseBodySize>0.8</baseBodySize>
+      <baseHealthScale>0.8</baseHealthScale>
+    </race>
+  </ThingDef>
+
+  <ThingDef ParentName="Hive_UnitBase">
+    <defName>Hive_Soldier</defName>
+    <label>soldier</label>
+    <description>A robust biological weapon built to defend the hive.</description>
+    <statBases>
+      <MoveSpeed>4.0</MoveSpeed>
+      <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+    </statBases>
+    <race>
+      <baseBodySize>1.2</baseBodySize>
+      <baseHealthScale>1.5</baseHealthScale>
+    </race>
+  </ThingDef>
+</Defs>
