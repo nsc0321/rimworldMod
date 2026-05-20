@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <GC_Title>유전자 등장 조절 설정</GC_Title>
+  <GC_EndoEnable>종족 유전자(Germline) 랜덤 추가 활성화</GC_EndoEnable>
+  <GC_EndoEnableDesc>활성화 시 신규 생성되는 폰에게 유전 가능한 선천적 종족 유전자가 추가될 기회가 부여됩니다.</GC_EndoEnableDesc>
+  <GC_EndoChance>종족 유전자 추가 기본 확률</GC_EndoChance>
+  
+  <GC_XenoEnable>외래 유전자(Xenogene) 랜덤 추가 활성화</GC_XenoEnable>
+  <GC_XenoEnableDesc>활성화 시 신규 생성되는 폰에게 유전되지 않는 후천적 외래 유전자가 추가될 기회가 부여됩니다.</GC_XenoEnableDesc>
+  <GC_XenoChance>외래 유전자 추가 기본 확률</GC_XenoChance>
+
+  <GC_MinGenes>최소 유전자 개수: </GC_MinGenes>
+  <GC_MaxGenes>최대 유전자 개수: </GC_MaxGenes>
+  
+  <GC_Search>검색: </GC_Search>
+  <GC_Reset>설정 초기화</GC_Reset>
+  <GC_SelectAllWL>전체 화이트리스트</GC_SelectAllWL>
+  <GC_SelectAllBL>전체 블랙리스트</GC_SelectAllBL>
+  <GC_ResetSuccess>모든 목록 및 설정이 초기화되었습니다.</GC_ResetSuccess>
+  
+  <GC_Icon>아이콘</GC_Icon>
+  <GC_GeneName>유전자 이름</GC_GeneName>
+  <GC_Whitelist>화이트리스트</GC_Whitelist>
+  <GC_Blacklist>블랙리스트</GC_Blacklist>
+  
+  <GC_Whitelisted>화이트리스트 지정됨</GC_Whitelisted>
+  <GC_Blacklisted>블랙리스트 지정됨</GC_Blacklisted>
+  
+  <GC_CustomChance>개별 확률 적용</GC_CustomChance>
+  <GC_DefaultChance>기본 전역 확률 적용 중</GC_DefaultChance>
+</LanguageData>

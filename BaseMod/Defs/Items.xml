@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="Item">
+    <defName>ExampleItem</defName>
+    <label>Example Item</label>
+    <description>This is an example item for your RimWorld mod.</description>
+    <statBases>
+      <MarketValue>10</MarketValue>
+      <Mass>0.5</Mass>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Items/ExampleItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <costList>
+      <Steel>5</Steel>
+    </costList>
+  </ThingDef>
+</Defs>

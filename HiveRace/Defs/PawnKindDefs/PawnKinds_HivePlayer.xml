@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- =====================================================
+       HiveKind_Player: 플레이어 시작 폰 (인간형)
+       - 시나리오 시작 시 1기 필수 배치
+       - 인간 바닐라 텍스처 사용 (녹색 피부 색상 오버레이)
+       ===================================================== -->
+  <PawnKindDef>
+    <defName>HiveKind_Player</defName>
+    <label>hive progenitor</label>
+    <race>Hive_PlayerRace</race>
+    <combatPower>50</combatPower>
+    <isFighter>true</isFighter>
+    <defaultFactionType>PlayerColony</defaultFactionType>
+    <minGenerationAge>18</minGenerationAge>
+    <maxGenerationAge>40</maxGenerationAge>
+
+    <!-- 스킬: 생존 및 전투에 특화된 초기 설정 -->
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <minLevel>5</minLevel>
+        <maxLevel>8</maxLevel>
+      </li>
+      <li>
+        <skill>Melee</skill>
+        <minLevel>5</minLevel>
+        <maxLevel>8</maxLevel>
+      </li>
+      <li>
+        <skill>Construction</skill>
+        <minLevel>3</minLevel>
+        <maxLevel>6</maxLevel>
+      </li>
+      <li>
+        <skill>Mining</skill>
+        <minLevel>3</minLevel>
+        <maxLevel>6</maxLevel>
+      </li>
+      <li>
+        <skill>Cooking</skill>
+        <minLevel>2</minLevel>
+        <maxLevel>4</maxLevel>
+      </li>
+    </skills>
+
+    <!-- 인간형 바닐라 텍스처: HAR의 skin color channel이 녹색 오버레이를 적용함 -->
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Humanlike/Bodies/Naked_Male</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.0</drawSize>
+        </bodyGraphicData>
+        <femaleGraphicData>
+          <texPath>Things/Pawn/Humanlike/Bodies/Naked_Female</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.0</drawSize>
+        </femaleGraphicData>
+      </li>
+    </lifeStages>
+
+  </PawnKindDef>
+
+</Defs>

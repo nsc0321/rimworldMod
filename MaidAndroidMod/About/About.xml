@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RimWorldMod About="RimWorld Mod">
+  <name>Maid Android Mod</name>
+  <packageId>nsc.MaidAndroidMod</packageId>
+  <author>Developer</author>
+  <supportedVersions>
+    <li>1.5</li>
+    <li>1.6</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>Ludeon.RimWorld.Biotech</packageId>
+      <displayName>Biotech</displayName>
+    </li>
+  </modDependencies>
+  <description>Introduces a custom Maid Android race and specialized service apparel with domestic efficiency bonuses, featuring full C# Harmony integration for mechanical traits (battery-fuel systems and pain immunity).</description>
+</RimWorldMod>

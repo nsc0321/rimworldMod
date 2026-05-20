@@ -1,0 +1,23 @@
+# Visual Studio / Rider / IDEs
+.vs/
+*.user
+*.suo
+*.userprefs
+*.sln.docstates
+.idea/
+*.csproj.user
+
+# Mono / .NET Build Artifacts
+bin/
+obj/
+_ReSharper*/
+
+# OS Generated Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# RimWorld mod specific ignorable binaries
+*.tmp
+*.bak
+*~

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- =====================================================
+       Hive 플레이어 종족: HAR 인간형 기반
+       - 시나리오 시작 캐릭터에 사용됨
+       - Overmind가 생성하는 전투 유닛(Hive_Unit)과 별개
+       ===================================================== -->
+  <ThingDef Class="AlienRace.ThingDef_AlienRace" ParentName="BasePawn" Name="Hive_PlayerRace">
+    <defName>Hive_PlayerRace</defName>
+    <thingClass>Pawn</thingClass>
+    <label>hive progenitor</label>
+    <description>A humanoid Hive progenitor — the seed from which the swarm grows. Possessing sentient intelligence and tool-using capability, the progenitor serves as the Overmind's avatar in the physical world. Their skin is tinged green by symbiotic bio-organisms, and their eyes glow with a faint amber hue.</description>
+
+    <statBases>
+      <MoveSpeed>4.6</MoveSpeed>
+      <GlobalLearningFactor>0.8</GlobalLearningFactor>
+    </statBases>
+
+    <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+    <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+    <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+
+    <race>
+      <intelligence>ToolUser</intelligence>
+      <body>HumanoidWithLegs</body>
+      <fleshType>Normal</fleshType>
+      <bloodDef>Filth_Blood</bloodDef>
+      <hasGenders>true</hasGenders>
+      <needsRest>true</needsRest>
+      <foodType>OmnivoreHuman</foodType>
+      <lifeExpectancy>80</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>HumanlikeBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>HumanlikeChild</def>
+          <minAge>3</minAge>
+        </li>
+        <li>
+          <def>HumanlikeTeenager</def>
+          <minAge>13</minAge>
+        </li>
+        <li>
+          <def>HumanlikeAdult</def>
+          <minAge>18</minAge>
+        </li>
+      </lifeStageAges>
+    </race>
+
+    <alienRace>
+      <generalSettings>
+        <allowHumanBios>false</allowHumanBios>
+        <corpseCategory>CorpsesHumanlike</corpseCategory>
+        <alienPartGenerator>
+          <bodyTypes>
+            <li>Male</li>
+            <li>Female</li>
+            <li>Thin</li>
+          </bodyTypes>
+          <colorChannels>
+            <!-- 녹색 피부: 하이브 생체 공생체의 영향 -->
+            <li>
+              <defName>skin</defName>
+              <first>
+                <min>(0.10, 0.38, 0.10)</min>
+                <max>(0.22, 0.60, 0.22)</max>
+              </first>
+            </li>
+            <!-- 어두운 녹색 머리카락 -->
+            <li>
+              <defName>hair</defName>
+              <first>
+                <min>(0.05, 0.14, 0.05)</min>
+                <max>(0.10, 0.28, 0.10)</max>
+              </first>
+            </li>
+          </colorChannels>
+        </alienPartGenerator>
+      </generalSettings>
+      <graphicPaths>
+        <skinShader>CutoutSkin</skinShader>
+      </graphicPaths>
+      <thoughtSettings />
+      <relationSettings />
+      <raceRestriction />
+    </alienRace>
+
+    <comps>
+      <li Class="HiveMod.CompProperties_HiveUnit" />
+    </comps>
+
+  </ThingDef>
+
+</Defs>

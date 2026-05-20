@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Gene Control Mod</name>
+  <packageId>developer131.genehcontrolhmod</packageId>
+  <author>Developer</author>
+  <supportedVersions>
+    <li>1.5</li>
+    <li>1.6</li>
+  </supportedVersions>
+  <description>Adds highly customizable random gene assignment features for newly generated pawns, with full whitelist/blacklist filtering options via a modern mod settings dashboard.</description>
+</ModMetaData>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>ExampleBuilding</defName>
+    <label>Example building</label>
+    <description>An example building.</description>
+    <graphicData>
+      <texPath>Things/Buildings/ExampleBuilding</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>1000</WorkToBuild>
+    </statBases>
+    <costList>
+      <Steel>10</Steel>
+    </costList>
+    <designationCategory>Production</designationCategory>
+  </ThingDef>
+</Defs>

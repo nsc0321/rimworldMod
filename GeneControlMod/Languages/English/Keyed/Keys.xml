@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <GC_Title>Gene Control Settings</GC_Title>
+  <GC_EndoEnable>Enable Random Endogene (Germline) Addition</GC_EndoEnable>
+  <GC_EndoEnableDesc>If enabled, newly generated pawns will have a chance to gain random inheritable germline genes.</GC_EndoEnableDesc>
+  <GC_EndoChance>Endogene Addition Chance</GC_EndoChance>
+  
+  <GC_XenoEnable>Enable Random Xenogene (Artificial) Addition</GC_XenoEnable>
+  <GC_XenoEnableDesc>If enabled, newly generated pawns will have a chance to gain random non-inheritable artificial xenogenes.</GC_XenoEnableDesc>
+  <GC_XenoChance>Xenogene Addition Chance</GC_XenoChance>
+
+  <GC_MinGenes>Min Genes: </GC_MinGenes>
+  <GC_MaxGenes>Max Genes: </GC_MaxGenes>
+  
+  <GC_Search>Search: </GC_Search>
+  <GC_Reset>Reset Settings</GC_Reset>
+  <GC_SelectAllWL>Select All WL</GC_SelectAllWL>
+  <GC_SelectAllBL>Select All BL</GC_SelectAllBL>
+  <GC_ResetSuccess>All lists and chances have been successfully reset.</GC_ResetSuccess>
+  
+  <GC_Icon>Icon</GC_Icon>
+  <GC_GeneName>Gene Name</GC_GeneName>
+  <GC_Whitelist>Whitelist</GC_Whitelist>
+  <GC_Blacklist>Blacklist</GC_Blacklist>
+  
+  <GC_Whitelisted>Whitelisted</GC_Whitelisted>
+  <GC_Blacklisted>Blacklisted</GC_Blacklisted>
+  
+  <GC_CustomChance>Custom Chance</GC_CustomChance>
+  <GC_DefaultChance>Using Default Global Chance</GC_DefaultChance>
+</LanguageData>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== Core Mechanoid Race (ThingDef) ==================== -->
+  <ThingDef ParentName="LightMechanoid">
+    <defName>Mech_Maid</defName>
+    <label>maid mechanoid</label>
+    <description>A light-class utility mechanoid designed for domestic order. Equipped with advanced cleaning apparatus, hauling gears, and cooking algorithms. Requires basic mechanitor control.</description>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <MoveSpeed>4.6</MoveSpeed>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">1</BandwidthCost>
+      <WorkSpeedGlobal>1.0</WorkSpeedGlobal>
+    </statBases>
+    <race>
+      <body>Mech_Light</body> <!-- Use stable vanilla Mech_Light body to guarantee PawnRenderTree initialization! -->
+      <mechWeightClass>Light</mechWeightClass>
+      <baseBodySize>1.0</baseBodySize> <!-- Scaled to human-maidnoid proportions! -->
+      <baseHealthScale>1.6</baseHealthScale>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>100</minAge>
+        </li>
+      </lifeStageAges>
+      <mechEnabledWorkTypes>
+        <li>Cleaning</li>
+        <li>Hauling</li>
+        <li>Cooking</li>
+        <li>Growing</li>
+        <li>Crafting</li>
+        <li>Mining</li>
+        <li>Construction</li>
+        <li>Art</li>
+        <li>Warden</li>
+        <li>Research</li>
+        <li>Doctor</li>
+      </mechEnabledWorkTypes>
+    </race>
+  </ThingDef>
+
+  <!-- ==================== In-game PawnKindDef ==================== -->
+  <PawnKindDef ParentName="LightMechanoidKind">
+    <defName>Mech_Maid</defName>
+    <label>maid mechanoid</label>
+    <race>Mech_Maid</race>
+    <combatPower>40</combatPower>
+    <defaultFactionType>PlayerColony</defaultFactionType>
+    <allowInMechClusters>false</allowInMechClusters>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/Mech_Maid/Mech_Maid</texPath>
+          <shaderType>Cutout</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.4, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/Mech_Maid/Mech_Maid</texPath>
+          <shaderType>Cutout</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.4, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- ==================== Gestation Vat Recipe (Creation) ==================== -->
+  <RecipeDef ParentName="LightMechanoidRecipe">
+    <defName>Gestate_Mech_Maid</defName>
+    <label>gestate maid mechanoid</label>
+    <description>Gestate a maid mechanoid in a gestation vat.</description>
+    <recipeUsers Inherit="False">
+      <li>MechGestator</li> <!-- Register recipe directly with Gestator to unlock the spawn trigger! -->
+    </recipeUsers>
+    <products>
+      <Mech_Maid>1</Mech_Maid>
+    </products>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreBasic</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>120</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <gestationCycles>3</gestationCycles>
+    <descriptionHyperlinks>
+      <ThingDef>Mech_Maid</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+
+</Defs>
