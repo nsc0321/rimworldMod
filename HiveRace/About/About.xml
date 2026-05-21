@@ -12,13 +12,19 @@
 Adds a new playable alien race based on a Zerg-like Hive mechanic. 
 Features an Overmind building that spreads creep, generates biomass, and spawns customizable units.
   </description>
-  <modDependencies>
-    <!-- Depending on Harmony for some C# patches if needed -->
-    <li>
-      <packageId>brrainz.harmony</packageId>
-      <displayName>Harmony</displayName>
-      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
-      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
-    </li>
-  </modDependencies>
+<modDependencies>
+  <!-- Depending on Harmony for some C# patches if needed -->
+  <li>
+    <packageId>brrainz.harmony</packageId>
+    <displayName>Harmony</displayName>
+    <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+    <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+  </li>
+  <!-- Alien Race framework is required for this mod -->
+  <li>
+    <packageId>erdelf.HumanoidAlienRaces</packageId>
+    <displayName>Humanoid Alien Races</displayName>
+    <steamWorkshopUrl>steam://url/CommunityFilePage/839005762</steamWorkshopUrl>
+  </li>
+</modDependencies>
 </ModMetaData>
