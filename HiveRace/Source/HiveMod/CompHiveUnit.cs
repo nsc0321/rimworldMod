@@ -55,7 +55,8 @@ namespace HiveMod
 
         private void CheckOvermindConnection()
         {
-            if (!Pawn.Spawned || Pawn.Dead || Pawn.MentalStateDef == MentalStateDefOf.Berserk) return;
+            MentalStateDef feralDef = DefDatabase<MentalStateDef>.GetNamedSilentFail("WanderingFeral") ?? MentalStateDefOf.Wander_Psychotic;
+            if (!Pawn.Spawned || Pawn.Dead || Pawn.MentalStateDef == feralDef) return;
 
             // Simple check: Is there any player Overmind on the map?
             bool overmindExists = false;
@@ -68,11 +69,31 @@ namespace HiveMod
                 }
             }
 
+            // Check if the character (pawn with HiveSeed gene) is alive and DEPLOYED on the map
             if (!overmindExists)
             {
-                // Overmind is dead or missing! Hive units go feral.
-                Pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk, "Overmind destroyed!", true, false, null, false);
-                Messages.Message($"{Pawn.Label} has gone berserk due to losing connection with the Overmind!", Pawn, MessageTypeDefOf.NegativeEvent);
+                GeneDef hiveSeedDef = DefDatabase<GeneDef>.GetNamedSilentFail("Gene_HiveSeed");
+                if (hiveSeedDef != null)
+                {
+                    foreach (Pawn p in Pawn.Map.mapPawns.SpawnedPawnsInFaction(Faction.OfPlayer))
+                    {
+                        if (p.genes != null && p.genes.HasActiveGene(hiveSeedDef) && !p.Dead)
+                        {
+                            var deployGene = p.genes.GetGene(hiveSeedDef) as Gene_Deploy;
+                            if (deployGene != null && deployGene.isDeployed)
+                            {
+                                overmindExists = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (!overmindExists)
+            {
+                Pawn.mindState.mentalStateHandler.TryStartMentalState(feralDef, "Overmind destroyed!", forced: true);
+                Messages.Message($"{Pawn.Label} has lost connection with the Overmind and became uncontrolled!", Pawn, MessageTypeDefOf.NegativeEvent);
             }
         }
     }

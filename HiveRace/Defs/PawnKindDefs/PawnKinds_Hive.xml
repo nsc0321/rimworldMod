@@ -10,7 +10,7 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath> <!-- Generic texture for now -->
+          <texPath>Dummy</texPath> <!-- Generic texture for now -->
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.0</drawSize>
           <color>(120, 120, 120)</color>

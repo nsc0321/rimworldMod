@@ -8,13 +8,13 @@ namespace HiveMod
 {
     public class Window_HiveEvolution : Window
     {
-        private Building_Overmind overmind;
+        private IHiveCore overmind;
         private GameComponent_HiveEvolution evolutionComponent;
         private Vector2 scrollPosition = Vector2.zero;
 
         public override Vector2 InitialSize => new Vector2(500f, 600f);
 
-        public Window_HiveEvolution(Building_Overmind overmind)
+        public Window_HiveEvolution(IHiveCore overmind)
         {
             this.overmind = overmind;
             this.forcePause = true;
@@ -31,11 +31,11 @@ namespace HiveMod
             Text.Font = GameFont.Small;
 
             float currentY = 40f;
-            Widgets.Label(new Rect(0f, currentY, inRect.width, 24f), $"Available Energy: {overmind.currentEnergy:F0}");
+            Widgets.Label(new Rect(0f, currentY, inRect.width, 24f), $"Available Energy: {overmind.CurrentEnergy:F0}");
             currentY += 30f;
 
             // Get all parts
-            var allParts = DefDatabase<HediffDef>.AllDefs
+            var allParts = DefDatabase<GeneDef>.AllDefs
                 .Where(d => d.HasModExtension<DefModExtension_HivePart>())
                 .ToList();
 
@@ -73,9 +73,9 @@ namespace HiveMod
                 {
                     if (Widgets.ButtonText(buttonRect, $"Unlock\n({ext.researchCostEnergy} Energy)"))
                     {
-                        if (overmind.currentEnergy >= ext.researchCostEnergy)
+                        if (overmind.CurrentEnergy >= ext.researchCostEnergy)
                         {
-                            overmind.currentEnergy -= ext.researchCostEnergy;
+                            overmind.CurrentEnergy -= ext.researchCostEnergy;
                             evolutionComponent.Unlock(partDef);
                             Messages.Message($"Unlocked: {partDef.label}", MessageTypeDefOf.PositiveEvent);
                         }

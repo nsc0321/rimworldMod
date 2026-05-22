@@ -8,16 +8,17 @@ namespace HiveMod
 {
     public class Window_SpawnHiveUnit : Window
     {
-        private Building_Overmind overmind;
+        private IHiveCore overmind;
         private GameComponent_HiveEvolution evolutionComponent;
         private const float BaseBiomassCost = 10f; // Base cost for the naked unit
+        private const float BaseEnergyCost = 50f;  // Base energy cost for the unit
         
         // Dictionary to track which part is selected per category (e.g., "Jaw" -> "HivePart_ToxicJaw")
-        private Dictionary<string, HediffDef> selectedParts = new Dictionary<string, HediffDef>();
+        private Dictionary<string, GeneDef> selectedParts = new Dictionary<string, GeneDef>();
 
         public override Vector2 InitialSize => new Vector2(500f, 600f);
 
-        public Window_SpawnHiveUnit(Building_Overmind overmind)
+        public Window_SpawnHiveUnit(IHiveCore overmind)
         {
             this.overmind = overmind;
             this.forcePause = true;
@@ -35,74 +36,130 @@ namespace HiveMod
 
             float currentY = 40f;
             int totalBiomass = GetTotalBiomass(overmind.Map);
-            float totalCost = CalculateTotalCost();
+            (float totalBiomassCost, float totalEnergyCost) = CalculateTotalCost();
 
-            Widgets.Label(new Rect(0f, currentY, inRect.width, 24f), $"Available Biomass on Map: {totalBiomass}");
+            Widgets.Label(new Rect(0f, currentY, inRect.width, 24f), $"Available Biomass: {totalBiomass}  |  Available Energy: {overmind.CurrentEnergy:F0}");
             currentY += 25f;
-            Widgets.Label(new Rect(0f, currentY, inRect.width, 24f), $"Total Assembly Cost: {totalCost}");
+
+            if (Widgets.ButtonText(new Rect(0f, currentY, 250f, 24f), "Convert 100 Energy -> 10 Biomass"))
+            {
+                if (overmind.CurrentEnergy >= 100f)
+                {
+                    overmind.CurrentEnergy -= 100f;
+                    Thing biomass = ThingMaker.MakeThing(ThingDef.Named("Hive_Biomass"));
+                    biomass.stackCount = 10;
+                    GenPlace.TryPlaceThing(biomass, overmind.Position, overmind.Map, ThingPlaceMode.Near);
+                    Messages.Message("Generated 10 Biomass.", MessageTypeDefOf.PositiveEvent);
+                }
+                else
+                {
+                    Messages.Message("Not enough Energy.", MessageTypeDefOf.RejectInput);
+                }
+            }
+            currentY += 30f;
+
+            Widgets.Label(new Rect(0f, currentY, inRect.width, 24f), $"Assembly Cost: {totalBiomassCost} Biomass, {totalEnergyCost} Energy");
             currentY += 30f;
 
             // Get all unlocked parts grouped by category
-            var unlockedParts = DefDatabase<HediffDef>.AllDefs
+            var unlockedParts = DefDatabase<GeneDef>.AllDefs
                 .Where(d => d.HasModExtension<DefModExtension_HivePart>() && evolutionComponent.IsUnlocked(d))
                 .GroupBy(d => d.GetModExtension<DefModExtension_HivePart>().category)
                 .ToList();
 
+            float boxWidth = 140f;
+            float boxHeight = 100f;
+            int columns = Mathf.FloorToInt(inRect.width / (boxWidth + 15f));
+            float gap = 15f;
+            int i = 0;
+
             foreach (var group in unlockedParts)
             {
-                Widgets.Label(new Rect(0f, currentY, inRect.width, 24f), $"--- {group.Key} ---");
-                currentY += 25f;
+                int col = i % columns;
+                int row = i / columns;
+                Rect boxRect = new Rect(col * (boxWidth + gap), currentY + row * (boxHeight + gap), boxWidth, boxHeight);
 
-                // Option for "None"
-                bool noneSelected = !selectedParts.ContainsKey(group.Key);
-                if (Widgets.RadioButtonLabeled(new Rect(10f, currentY, 200f, 24f), "None", noneSelected))
+                Widgets.DrawMenuSection(boxRect);
+                Widgets.DrawHighlightIfMouseover(boxRect);
+
+                // Category Name
+                Text.Font = GameFont.Small;
+                Text.Anchor = TextAnchor.UpperCenter;
+                Widgets.Label(new Rect(boxRect.x, boxRect.y + 5f, boxRect.width, 24f), group.Key);
+
+                // Selected Part Name
+                Text.Anchor = TextAnchor.MiddleCenter;
+                bool hasSelection = selectedParts.ContainsKey(group.Key);
+                string partName = hasSelection ? selectedParts[group.Key].label.CapitalizeFirst() : "None";
+                Widgets.Label(boxRect, partName);
+
+                // Selected Part Cost
+                Text.Anchor = TextAnchor.LowerCenter;
+                if (hasSelection)
                 {
-                    if (selectedParts.ContainsKey(group.Key))
-                        selectedParts.Remove(group.Key);
+                    var ext = selectedParts[group.Key].GetModExtension<DefModExtension_HivePart>();
+                    Widgets.Label(new Rect(boxRect.x, boxRect.yMax - 25f, boxRect.width, 24f), $"(+{ext.assemblyCostBiomass}B, +{ext.assemblyCostEnergy}E)");
                 }
-                currentY += 25f;
 
-                // Options for unlocked parts
-                foreach (var partDef in group)
+                Text.Anchor = TextAnchor.UpperLeft;
+
+                // Handle Click
+                if (Widgets.ButtonInvisible(boxRect))
                 {
-                    var ext = partDef.GetModExtension<DefModExtension_HivePart>();
-                    bool isSelected = selectedParts.ContainsKey(group.Key) && selectedParts[group.Key] == partDef;
+                    List<FloatMenuOption> options = new List<FloatMenuOption>();
                     
-                    if (Widgets.RadioButtonLabeled(new Rect(10f, currentY, 400f, 24f), $"{partDef.label.CapitalizeFirst()} (+{ext.assemblyCostBiomass} Cost)", isSelected))
+                    options.Add(new FloatMenuOption("None", () => {
+                        if (selectedParts.ContainsKey(group.Key))
+                            selectedParts.Remove(group.Key);
+                    }));
+
+                    foreach (var partDef in group)
                     {
-                        selectedParts[group.Key] = partDef;
+                        var ext = partDef.GetModExtension<DefModExtension_HivePart>();
+                        string label = $"{partDef.label.CapitalizeFirst()} (+{ext.assemblyCostBiomass} Biomass, +{ext.assemblyCostEnergy} Energy)";
+                        // Need to copy the loop variable
+                        GeneDef localDef = partDef; 
+                        string localKey = group.Key;
+                        options.Add(new FloatMenuOption(label, () => {
+                            selectedParts[localKey] = localDef;
+                        }));
                     }
-                    currentY += 25f;
+
+                    Find.WindowStack.Add(new FloatMenu(options));
                 }
-                currentY += 10f; // Spacing between categories
+                
+                i++;
             }
 
             // Spawn Button
             Rect spawnRect = new Rect(0f, inRect.height - 80f, inRect.width, 40f);
             if (Widgets.ButtonText(spawnRect, "Assemble & Spawn Unit"))
             {
-                if (totalBiomass >= totalCost)
+                if (totalBiomass >= totalBiomassCost && overmind.CurrentEnergy >= totalEnergyCost)
                 {
-                    ConsumeBiomass(totalCost);
+                    ConsumeBiomass(totalBiomassCost);
+                    overmind.CurrentEnergy -= totalEnergyCost;
                     SpawnUnitWithParts();
                     this.Close();
                 }
                 else
                 {
-                    Messages.Message("Not enough Biomass.", MessageTypeDefOf.RejectInput);
+                    Messages.Message("Not enough Biomass or Energy.", MessageTypeDefOf.RejectInput);
                 }
             }
         }
 
-        private float CalculateTotalCost()
+        private (float, float) CalculateTotalCost()
         {
-            float cost = BaseBiomassCost;
+            float biomassCost = BaseBiomassCost;
+            float energyCost = BaseEnergyCost;
             foreach (var partDef in selectedParts.Values)
             {
                 var ext = partDef.GetModExtension<DefModExtension_HivePart>();
-                cost += ext.assemblyCostBiomass;
+                biomassCost += ext.assemblyCostBiomass;
+                energyCost += ext.assemblyCostEnergy;
             }
-            return cost;
+            return (biomassCost, energyCost);
         }
 
         private int GetTotalBiomass(Map map)
@@ -143,19 +200,17 @@ namespace HiveMod
             PawnGenerationRequest request = new PawnGenerationRequest(kindDef, Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, 1f, false, true, false, true, false, false);
             Pawn pawn = PawnGenerator.GeneratePawn(request);
             
-            GenSpawn.Spawn(pawn, overmind.InteractionCell, overmind.Map);
+            GenSpawn.Spawn(pawn, overmind.Position, overmind.Map);
 
-            // Apply selected parts (Hediffs)
+            // Apply selected parts (Genes)
+            if (pawn.genes == null)
+            {
+                pawn.genes = new Pawn_GeneTracker(pawn);
+            }
+
             foreach (var partDef in selectedParts.Values)
             {
-                // In a real mod, we would try to find the specific body part record (e.g. "Jaw") to apply the Hediff to.
-                // For simplicity, we apply it to the whole body if no specific part is found, or just rely on the Hediff to affect global stats.
-                BodyPartRecord targetPart = null;
-                var ext = partDef.GetModExtension<DefModExtension_HivePart>();
-                if (ext.category == "Jaw") targetPart = pawn.RaceProps.body.GetPartsWithDef(BodyPartDefOf.Jaw).FirstOrDefault();
-                else if (ext.category == "Legs") targetPart = pawn.RaceProps.body.GetPartsWithDef(BodyPartDefOf.Leg).FirstOrDefault();
-                
-                pawn.health.AddHediff(partDef, targetPart);
+                pawn.genes.AddGene(partDef, true);
             }
 
             Messages.Message($"Spawned a mutated {kindDef.label}!", pawn, MessageTypeDefOf.PositiveEvent);

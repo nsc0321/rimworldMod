@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- =====================================================
+       Hive Mutation Genes (Biotech GeneDefs)
+       - Used in Hive Evolution & custom unit assembly
+       - Uses Big and Small - Framework for size scaling
+       ===================================================== -->
+
+  <!-- Toxic Jaw -->
+  <GeneDef>
+    <defName>HivePart_ToxicJaw</defName>
+    <label>toxic jaw</label>
+    <description>A mutated jaw that secretes deadly venom. Reduces raw melee damage but adds toxicity.</description>
+    <iconPath>Dummy</iconPath>
+    <displayCategory>HiveMutations</displayCategory>
+    <displayOrderInCategory>100</displayOrderInCategory>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>0</biostatMet>
+    <modExtensions>
+      <li Class="HiveMod.DefModExtension_HivePart">
+        <researchCostEnergy>300</researchCostEnergy>
+        <assemblyCostBiomass>20</assemblyCostBiomass>
+        <category>Jaw</category>
+      </li>
+    </modExtensions>
+    <statFactors>
+      <MeleeDPS>0.8</MeleeDPS>
+    </statFactors>
+    <statOffsets>
+      <MeleeHitChance>2</MeleeHitChance>
+    </statOffsets>
+  </GeneDef>
+
+  <!-- Mining Jaw -->
+  <GeneDef>
+    <defName>HivePart_MiningJaw</defName>
+    <label>mining jaw</label>
+    <description>A heavily reinforced jaw designed to crush rocks, granting the ability to mine effectively.</description>
+    <iconPath>Dummy</iconPath>
+    <displayCategory>HiveMutations</displayCategory>
+    <displayOrderInCategory>110</displayOrderInCategory>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>0</biostatMet>
+    <modExtensions>
+      <li Class="HiveMod.DefModExtension_HivePart">
+        <researchCostEnergy>200</researchCostEnergy>
+        <assemblyCostBiomass>15</assemblyCostBiomass>
+        <category>Jaw</category>
+      </li>
+    </modExtensions>
+    <statOffsets>
+      <MiningSpeed>2.0</MiningSpeed>
+      <MiningYield>0.5</MiningYield>
+    </statOffsets>
+  </GeneDef>
+
+  <!-- Heavy Carapace (Utilizes Big and Small - Framework size modifier) -->
+  <GeneDef>
+    <defName>HivePart_HeavyCarapace</defName>
+    <label>heavy carapace</label>
+    <description>Thickened armor plating that drastically increases defense at the cost of mobility, noticeably enlarging the unit.</description>
+    <iconPath>Dummy</iconPath>
+    <displayCategory>HiveMutations</displayCategory>
+    <displayOrderInCategory>120</displayOrderInCategory>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>0</biostatMet>
+    <modExtensions>
+      <li Class="HiveMod.DefModExtension_HivePart">
+        <researchCostEnergy>500</researchCostEnergy>
+        <assemblyCostBiomass>30</assemblyCostBiomass>
+        <category>Carapace</category>
+      </li>
+    </modExtensions>
+    <statOffsets>
+      <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+      <MoveSpeed>-1.0</MoveSpeed>
+      <SM_BodySizeOffset>0.25</SM_BodySizeOffset> <!-- Big and Small Framework size scaling -->
+    </statOffsets>
+  </GeneDef>
+
+  <!-- Sprinting Legs -->
+  <GeneDef>
+    <defName>HivePart_SprintingLegs</defName>
+    <label>sprinting legs</label>
+    <description>Elongated, muscular legs that greatly increase movement speed but are fragile.</description>
+    <iconPath>Dummy</iconPath>
+    <displayCategory>HiveMutations</displayCategory>
+    <displayOrderInCategory>130</displayOrderInCategory>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>0</biostatMet>
+    <modExtensions>
+      <li Class="HiveMod.DefModExtension_HivePart">
+        <researchCostEnergy>400</researchCostEnergy>
+        <assemblyCostBiomass>25</assemblyCostBiomass>
+        <category>Legs</category>
+      </li>
+    </modExtensions>
+    <statOffsets>
+      <MoveSpeed>2.5</MoveSpeed>
+    </statOffsets>
+  </GeneDef>
+  <GeneDef>
+    <defName>Gene_HiveSeed</defName>
+    <label>hive seed</label>
+    <description>Grants the ability to deploy into a stationary form that spreads creep, extending the hive's domain.</description>
+    <geneClass>HiveMod.Gene_Deploy</geneClass>
+    <iconPath>Dummy</iconPath>
+    <displayCategory>HiveMutations</displayCategory>
+    <displayOrderInCategory>10</displayOrderInCategory>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>0</biostatMet>
+  </GeneDef>
+</Defs>

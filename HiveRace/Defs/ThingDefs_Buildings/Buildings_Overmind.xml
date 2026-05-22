@@ -7,7 +7,7 @@
     <thingClass>HiveMod.Building_Overmind</thingClass>
     <graphicData>
       <!-- Placeholder texture (vanilla psychic emanator or something simple) -->
-      <texPath>Things/Building/Misc/PsychicEmanator</texPath>
+      <texPath>Dummy</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(3,3)</drawSize>
     </graphicData>

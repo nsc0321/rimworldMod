@@ -6,7 +6,7 @@
        - 시나리오 시작 캐릭터에 사용됨
        - Overmind가 생성하는 전투 유닛(Hive_Unit)과 별개
        ===================================================== -->
-  <ThingDef Class="AlienRace.ThingDef_AlienRace" ParentName="BasePawn" Name="Hive_PlayerRace">
+  <ThingDef ParentName="BasePawn" Name="Hive_PlayerRace">
     <defName>Hive_PlayerRace</defName>
     <thingClass>Pawn</thingClass>
     <label>hive progenitor</label>
@@ -17,13 +17,15 @@
       <GlobalLearningFactor>0.8</GlobalLearningFactor>
     </statBases>
 
-    <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
-    <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
-    <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
 
     <race>
-      <intelligence>ToolUser</intelligence>
-      <body>HumanoidWithLegs</body>
+      <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding_Metal</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+      <intelligence>Humanlike</intelligence>
+      <thinkTreeMain>Humanlike</thinkTreeMain>
+      <thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
+      <body>Human</body>
       <fleshType>Normal</fleshType>
       <bloodDef>Filth_Blood</bloodDef>
       <hasGenders>true</hasGenders>
@@ -49,44 +51,6 @@
         </li>
       </lifeStageAges>
     </race>
-
-    <alienRace>
-      <generalSettings>
-        <allowHumanBios>false</allowHumanBios>
-        <corpseCategory>CorpsesHumanlike</corpseCategory>
-        <alienPartGenerator>
-          <bodyTypes>
-            <li>Male</li>
-            <li>Female</li>
-            <li>Thin</li>
-          </bodyTypes>
-          <colorChannels>
-            <!-- 녹색 피부: 하이브 생체 공생체의 영향 -->
-            <li>
-              <defName>skin</defName>
-              <first>
-                <min>(0.10, 0.38, 0.10)</min>
-                <max>(0.22, 0.60, 0.22)</max>
-              </first>
-            </li>
-            <!-- 어두운 녹색 머리카락 -->
-            <li>
-              <defName>hair</defName>
-              <first>
-                <min>(0.05, 0.14, 0.05)</min>
-                <max>(0.10, 0.28, 0.10)</max>
-              </first>
-            </li>
-          </colorChannels>
-        </alienPartGenerator>
-      </generalSettings>
-      <graphicPaths>
-        <skinShader>CutoutSkin</skinShader>
-      </graphicPaths>
-      <thoughtSettings />
-      <relationSettings />
-      <raceRestriction />
-    </alienRace>
 
     <comps>
       <li Class="HiveMod.CompProperties_HiveUnit" />

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- Humanoid Alien Races (erdelf.HumanoidAlienRaces)가 활성화되어 있을 때만 실행 -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>erdelf.HumanoidAlienRaces</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- 1. 기본 ThingDef 제거 -->
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ThingDef[defName="Hive_PlayerRace"]</xpath>
+        </li>
+        
+        <!-- 2. HAR 기반의 AlienRace.ThingDef_AlienRace 추가 -->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs</xpath>
+          <value>
+            <AlienRace.ThingDef_AlienRace ParentName="BasePawn" Name="Hive_PlayerRace">
+              <defName>Hive_PlayerRace</defName>
+              <thingClass>Pawn</thingClass>
+              <label>hive progenitor</label>
+              <description>A humanoid Hive progenitor — the seed from which the swarm grows. Possessing sentient intelligence and tool-using capability, the progenitor serves as the Overmind's avatar in the physical world. Their skin is tinged green by symbiotic bio-organisms, and their eyes glow with a faint amber hue.</description>
+
+              <statBases>
+                <MoveSpeed>4.6</MoveSpeed>
+                <GlobalLearningFactor>0.8</GlobalLearningFactor>
+              </statBases>
+
+              <race>
+                <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+                <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding_Metal</soundMeleeHitBuilding>
+                <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+                <intelligence>Humanlike</intelligence>
+                <body>Human</body>
+                <fleshType>Normal</fleshType>
+                <bloodDef>Filth_Blood</bloodDef>
+                <hasGenders>true</hasGenders>
+                <needsRest>true</needsRest>
+                <foodType>OmnivoreHuman</foodType>
+                <lifeExpectancy>80</lifeExpectancy>
+                <lifeStageAges>
+                  <li>
+                    <def>HumanlikeBaby</def>
+                    <minAge>0</minAge>
+                  </li>
+                  <li>
+                    <def>HumanlikeChild</def>
+                    <minAge>3</minAge>
+                  </li>
+                  <li>
+                    <def>HumanlikeTeenager</def>
+                    <minAge>13</minAge>
+                  </li>
+                  <li>
+                    <def>HumanlikeAdult</def>
+                    <minAge>18</minAge>
+                  </li>
+                </lifeStageAges>
+              </race>
+
+              <alienRace>
+                <generalSettings>
+                  <allowHumanBios>false</allowHumanBios>
+                  <corpseCategory>CorpsesHumanlike</corpseCategory>
+                  <alienPartGenerator>
+                    <bodyTypes>
+                      <li>Male</li>
+                      <li>Female</li>
+                      <li>Thin</li>
+                    </bodyTypes>
+                    <colorChannels>
+                      <!-- 녹색 피부: 하이브 생체 공생체의 영향 -->
+                      <li>
+                        <defName>skin</defName>
+                        <first Class="ColorGenerator_Options">
+                          <options>
+                            <li>
+                              <min>(0.10, 0.38, 0.10)</min>
+                              <max>(0.22, 0.60, 0.22)</max>
+                            </li>
+                          </options>
+                        </first>
+                      </li>
+                      <!-- 어두운 녹색 머리카락 -->
+                      <li>
+                        <defName>hair</defName>
+                        <first Class="ColorGenerator_Options">
+                          <options>
+                            <li>
+                              <min>(0.05, 0.14, 0.05)</min>
+                              <max>(0.10, 0.28, 0.10)</max>
+                            </li>
+                          </options>
+                        </first>
+                      </li>
+                    </colorChannels>
+                  </alienPartGenerator>
+                </generalSettings>
+                <graphicPaths>
+                  <skinShader>CutoutSkin</skinShader>
+                </graphicPaths>
+                <thoughtSettings />
+                <relationSettings />
+                <raceRestriction />
+              </alienRace>
+
+              <comps>
+                <li Class="HiveMod.CompProperties_HiveUnit" />
+              </comps>
+            </AlienRace.ThingDef_AlienRace>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

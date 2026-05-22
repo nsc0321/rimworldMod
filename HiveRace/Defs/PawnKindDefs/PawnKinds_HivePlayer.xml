@@ -6,10 +6,15 @@
        - 시나리오 시작 시 1기 필수 배치
        - 인간 바닐라 텍스처 사용 (녹색 피부 색상 오버레이)
        ===================================================== -->
-  <PawnKindDef>
+  <PawnKindDef ParentName="BasePlayerPawnKind">
     <defName>HiveKind_Player</defName>
     <label>hive progenitor</label>
     <race>Hive_PlayerRace</race>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Hive_ProgenitorXenotype>1</Hive_ProgenitorXenotype>
+      </xenotypeChances>
+    </xenotypeSet>
     <combatPower>50</combatPower>
     <isFighter>true</isFighter>
     <defaultFactionType>PlayerColony</defaultFactionType>
@@ -51,12 +56,48 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Humanlike/Bodies/Naked_Male</texPath>
+          <texPath>Dummy</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.0</drawSize>
         </bodyGraphicData>
         <femaleGraphicData>
-          <texPath>Things/Pawn/Humanlike/Bodies/Naked_Female</texPath>
+          <texPath>Dummy</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.0</drawSize>
+        </femaleGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Dummy</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.0</drawSize>
+        </bodyGraphicData>
+        <femaleGraphicData>
+          <texPath>Dummy</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.0</drawSize>
+        </femaleGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Dummy</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.0</drawSize>
+        </bodyGraphicData>
+        <femaleGraphicData>
+          <texPath>Dummy</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.0</drawSize>
+        </femaleGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Dummy</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.0</drawSize>
+        </bodyGraphicData>
+        <femaleGraphicData>
+          <texPath>Dummy</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.0</drawSize>
         </femaleGraphicData>

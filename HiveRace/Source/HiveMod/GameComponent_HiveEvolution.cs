@@ -6,7 +6,7 @@ namespace HiveMod
 {
     public class GameComponent_HiveEvolution : GameComponent
     {
-        // Tracks which Hive Parts (HediffDefs) have been unlocked
+        // Tracks which Hive Parts (GeneDefs) have been unlocked
         public HashSet<string> unlockedParts = new HashSet<string>();
 
         public GameComponent_HiveEvolution(Game game)
@@ -34,12 +34,12 @@ namespace HiveMod
             }
         }
 
-        public bool IsUnlocked(HediffDef def)
+        public bool IsUnlocked(GeneDef def)
         {
             return unlockedParts.Contains(def.defName);
         }
 
-        public void Unlock(HediffDef def)
+        public void Unlock(GeneDef def)
         {
             if (!unlockedParts.Contains(def.defName))
             {

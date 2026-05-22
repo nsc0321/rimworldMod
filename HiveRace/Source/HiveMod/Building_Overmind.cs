@@ -6,13 +6,17 @@ using UnityEngine;
 
 namespace HiveMod
 {
-    public class Building_Overmind : Building
+    public class Building_Overmind : Building, IHiveCore
     {
         public float currentEnergy = 0f;
         public float maxEnergy = 1000f;
 
+        public float CurrentEnergy { get { return currentEnergy; } set { currentEnergy = value; } }
+        public float MaxEnergy { get { return maxEnergy; } }
+        public Thing ThingContext { get { return this; } }
+
         private int tickCounter = 0;
-        private const int TickInterval = 60; // 1 second in normal speed
+        private const int UpdateTickInterval = 60; // 1 second in normal speed
         private const float CreepSpreadRadius = 15.9f;
 
         public override void ExposeData()
@@ -21,12 +25,12 @@ namespace HiveMod
             Scribe_Values.Look(ref currentEnergy, "currentEnergy", 0f);
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             tickCounter++;
             
-            if (tickCounter >= TickInterval)
+            if (tickCounter >= UpdateTickInterval)
             {
                 tickCounter = 0;
                 DoTickInterval();
@@ -93,7 +97,7 @@ namespace HiveMod
             {
                 defaultLabel = "Generate Biomass",
                 defaultDesc = "Convert 100 Energy into 10 Biomass.",
-                icon = ContentFinder<Texture2D>.Get("UI/Designators/Deconstruct", true), // placeholder icon
+                icon = ContentFinder<Texture2D>.Get("Dummy", true), // placeholder icon
                 action = () =>
                 {
                     if (currentEnergy >= 100f)
@@ -116,7 +120,7 @@ namespace HiveMod
             {
                 defaultLabel = "Assemble Unit",
                 defaultDesc = "Open the assembly menu to spend Biomass and create Hive units.",
-                icon = ContentFinder<Texture2D>.Get("UI/Designators/Install", true), // placeholder icon
+                icon = ContentFinder<Texture2D>.Get("Dummy", true), // placeholder icon
                 action = () =>
                 {
                     Find.WindowStack.Add(new Window_SpawnHiveUnit(this));
@@ -128,7 +132,7 @@ namespace HiveMod
             {
                 defaultLabel = "Evolution",
                 defaultDesc = "Open the evolution menu to spend Energy and research new parts.",
-                icon = ContentFinder<Texture2D>.Get("UI/Designators/Research", true), // placeholder icon
+                icon = ContentFinder<Texture2D>.Get("Dummy", true), // placeholder icon
                 action = () =>
                 {
                     Find.WindowStack.Add(new Window_HiveEvolution(this));

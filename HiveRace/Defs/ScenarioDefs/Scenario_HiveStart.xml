@@ -9,9 +9,9 @@
   <ScenarioDef ParentName="ScenarioBase">
     <defName>Scenario_HiveOrigin</defName>
     <label>Hive: 1기의 시작</label>
-    <description>하나의 Hive Unit만으로 황야에 떨어졌다. Overmind를 세우고, 점막(Creep)을 퍼트리고, 군단을 키워라.\n\n주의: Hive Unit은 기본적으로 능력이 제한되어 있어 고난이도 시나리오입니다.\n(캐릭터 선택 후 맵 진입 시 자동으로 Hive Unit으로 전환됩니다.)</description>
+    <description>하나의 Hive Unit만으로 황야에 떨어졌다. 자신을 희생해 코어(Overmind)로 변이하고, 점막(Creep)을 퍼트려 군단을 키워라.\n\n주의: Hive Unit은 기본적으로 능력이 제한되어 있어 고난이도 시나리오입니다.</description>
     <scenario>
-      <summary>단 1기의 Hive Unit. Overmind를 세워 군단을 일으켜라.</summary>
+      <summary>단 1기의 Hive Unit. 자신을 배치(Deploy)해 군단을 일으켜라.</summary>
       <parts>
 
         <!-- ===== 게임 시작 다이얼로그 ===== -->
@@ -42,12 +42,7 @@
           <method>Standing</method>
         </li>
 
-        <!-- ===== 시작 아이템: Overmind 건물 ===== -->
-        <li Class="ScenPart_StartingThing_Defined">
-          <def>StartingThing_Defined</def>
-          <thingDef>Building_HiveOvermind</thingDef>
-          <count>1</count>
-        </li>
+
 
         <!-- ===== 시작 자원: 강철 ===== -->
         <li Class="ScenPart_StartingThing_Defined">
