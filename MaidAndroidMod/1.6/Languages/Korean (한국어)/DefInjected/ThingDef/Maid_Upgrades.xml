@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MaidModuleInstallationBench.label>메이드 모듈 설치대</MaidModuleInstallationBench.label>
+  <MaidModuleInstallationBench.description>메이드 메카노이드 전용 모듈 및 업그레이드 보조 프로세서를 안전하게 장착하고 추출할 수 있도록 설계된 전문 유지보수 스테이션입니다.</MaidModuleInstallationBench.description>
+  
+  <MaidModuleProductionBench.label>메이드 모듈 제작대</MaidModuleProductionBench.label>
+  <MaidModuleProductionBench.description>기본 서브코어를 가공하여 메이드 메카노이드 전용 칩을 생산하는 데 사용되는 고도화된 인코딩 작업대입니다.</MaidModuleProductionBench.description>
+
+  <MaidChip_Cook.label>요리 모듈</MaidChip_Cook.label>
+  <MaidChip_Cook.description>메이드 메카노이드에게 요리 서브루틴을 입력하는 고급 프로세서 칩입니다.</MaidChip_Cook.description>
+  <MaidChip_Grow.label>원예 모듈</MaidChip_Grow.label>
+  <MaidChip_Grow.description>농사 및 원예 서브루틴이 프로그래밍된 프로세서 칩입니다.</MaidChip_Grow.description>
+  <MaidChip_Craft.label>제작 모듈</MaidChip_Craft.label>
+  <MaidChip_Craft.description>재봉 및 부품 제작 알고리즘이 탑재된 제작 모듈 칩입니다.</MaidChip_Craft.description>
+  <MaidChip_Mine.label>채굴 모듈</MaidChip_Mine.label>
+  <MaidChip_Mine.description>암석 굴착 및 채굴 서브루틴이 프로그래밍된 채굴 모듈 칩입니다.</MaidChip_Mine.description>
+  <MaidChip_Construct.label>건설 모듈</MaidChip_Construct.label>
+  <MaidChip_Construct.description>구조물 건설 및 조립 서브루틴을 갖춘 건설 모듈 칩입니다.</MaidChip_Construct.description>
+  <MaidChip_Art.label>예술 모듈</MaidChip_Art.label>
+  <MaidChip_Art.description>미술, 조각 및 미적 세공 서브루틴을 갖춘 예술 모듈 칩입니다.</MaidChip_Art.description>
+  <MaidChip_Warden.label>사교 모듈</MaidChip_Warden.label>
+  <MaidChip_Warden.description>외교, 교도 및 협상 서브루틴을 갖춘 사교 모듈 칩입니다.</MaidChip_Warden.description>
+  <MaidChip_Research.label>연구 모듈</MaidChip_Research.label>
+  <MaidChip_Research.description>고속 실험 분석 및 과학 계산 서브루틴을 갖춘 연구 모듈 칩입니다.</MaidChip_Research.description>
+  <MaidChip_Doctor.label>의료 모듈</MaidChip_Doctor.label>
+  <MaidChip_Doctor.description>외과 수술 및 기본 의료 처치 서브루틴을 갖춘 의료 모듈 칩입니다.</MaidChip_Doctor.description>
+  <MaidChip_Combat.label>전투 모듈</MaidChip_Combat.label>
+  <MaidChip_Combat.description>보안 무기 취급 및 전투 타겟팅 서브루틴을 갖춘 전투 모듈 칩입니다.</MaidChip_Combat.description>
+
+  <MaidAppearanceStation.label>메이드 외장 개조 시설</MaidAppearanceStation.label>
+  <MaidAppearanceStation.description>메이드 메카노이드의 외장을 튜닝하고 커스텀 스킨을 적용할 수 있는 기계식 도색 및 개조 스테이션입니다.</MaidAppearanceStation.description>
+</LanguageData>

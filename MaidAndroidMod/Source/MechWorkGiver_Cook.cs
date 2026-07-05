@@ -20,7 +20,7 @@ namespace MaidAndroidMod
                 return false;
 
             // 3. Verify it is a player-controlled Maid Mechanoid
-            if (!pawn.IsColonyMech || pawn.def.defName != "Mech_Maid")
+            if (!pawn.IsColonyMech || !MaidUtility.IsMaid(pawn))
                 return false;
 
             // 4. Must be a culinary workbench (Electric Stove, Fueled Stove, Butcher Table)

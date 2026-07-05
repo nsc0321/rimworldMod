@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <WorkGiverDef>
+    <defName>DoBillsMaidAssemblyBench</defName>
+    <label>assemble maid modules</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Crafting</workType>
+    <priorityInType>98</priorityInType>
+    <fixedBillGiverDefs>
+      <li>MaidModuleInstallationBench</li>
+    </fixedBillGiverDefs>
+    <verb>assemble</verb>
+    <gerund>assembling at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+</Defs>

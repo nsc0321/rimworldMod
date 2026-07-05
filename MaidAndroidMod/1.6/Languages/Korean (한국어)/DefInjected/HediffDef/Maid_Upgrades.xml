@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Combat Module -->
+  <MaidModule_Combat_Basic.label>전투 모듈 (기초)</MaidModule_Combat_Basic.label>
+  <MaidModule_Combat_Basic.description>설치된 기초 등급의 전투 모듈입니다. 사격, 격투, 사냥 능력을 잠금해제합니다.</MaidModule_Combat_Basic.description>
+  <MaidModule_Combat_Standard.label>전투 모듈 (표준)</MaidModule_Combat_Standard.label>
+  <MaidModule_Combat_Standard.description>설치된 표준 등급의 전투 모듈입니다. 사격, 격투, 사냥 능력을 잠금해제합니다.</MaidModule_Combat_Standard.description>
+  <MaidModule_Combat_High.label>전투 모듈 (고급)</MaidModule_Combat_High.label>
+  <MaidModule_Combat_High.description>설치된 고급 등급의 전투 모듈입니다. 사격, 격투, 사냥 능력을 잠금해제합니다.</MaidModule_Combat_High.description>
+  <MaidModule_Combat_Ultra.label>전투 모듈 (초고급)</MaidModule_Combat_Ultra.label>
+  <MaidModule_Combat_Ultra.description>설치된 초고급 등급의 전투 모듈입니다. 사격, 격투, 사냥 능력을 잠금해제합니다.</MaidModule_Combat_Ultra.description>
+
+  <!-- Rescue Module -->
+  <MaidModule_Rescue_Basic.label>구조 모듈 (기초)</MaidModule_Rescue_Basic.label>
+  <MaidModule_Rescue_Basic.description>설치된 기초 등급의 구조 모듈입니다. 임상 치료와 소방 능력을 잠금해제합니다.</MaidModule_Rescue_Basic.description>
+  <MaidModule_Rescue_Standard.label>구조 모듈 (표준)</MaidModule_Rescue_Standard.label>
+  <MaidModule_Rescue_Standard.description>설치된 표준 등급의 구조 모듈입니다. 임상 치료와 소방 능력을 잠금해제합니다.</MaidModule_Rescue_Standard.description>
+  <MaidModule_Rescue_High.label>구조 모듈 (고급)</MaidModule_Rescue_High.label>
+  <MaidModule_Rescue_High.description>설치된 고급 등급의 구조 모듈입니다. 임상 치료와 소방 능력을 잠금해제합니다.</MaidModule_Rescue_High.description>
+  <MaidModule_Rescue_Ultra.label>구조 모듈 (초고급)</MaidModule_Rescue_Ultra.label>
+  <MaidModule_Rescue_Ultra.description>설치된 초고급 등급의 구조 모듈입니다. 임상 치료와 소방 능력을 잠금해제합니다.</MaidModule_Rescue_Ultra.description>
+
+  <!-- Domestic Module -->
+  <MaidModule_Domestic_Basic.label>가사 모듈 (기초)</MaidModule_Domestic_Basic.label>
+  <MaidModule_Domestic_Basic.description>설치된 기초 등급의 가사 모듈입니다. 요리, 재봉, 간수 및 육아 능력을 잠금해제합니다.</MaidModule_Domestic_Basic.description>
+  <MaidModule_Domestic_Standard.label>가사 모듈 (표준)</MaidModule_Domestic_Standard.label>
+  <MaidModule_Domestic_Standard.description>설치된 표준 등급의 가사 모듈입니다. 요리, 재봉, 간수 및 육아 능력을 잠금해제합니다.</MaidModule_Domestic_Standard.description>
+  <MaidModule_Domestic_High.label>가사 모듈 (고급)</MaidModule_Domestic_High.label>
+  <MaidModule_Domestic_High.description>설치된 고급 등급의 가사 모듈입니다. 요리, 재봉, 간수 및 육아 능력을 잠금해제합니다.</MaidModule_Domestic_High.description>
+  <MaidModule_Domestic_Ultra.label>가사 모듈 (초고급)</MaidModule_Domestic_Ultra.label>
+  <MaidModule_Domestic_Ultra.description>설치된 초고급 등급의 가사 모듈입니다. 요리, 재봉, 간수 및 육아 능력을 잠금해제합니다.</MaidModule_Domestic_Ultra.description>
+
+  <!-- Work Module -->
+  <MaidModule_Work_Basic.label>작업 모듈 (기초)</MaidModule_Work_Basic.label>
+  <MaidModule_Work_Basic.description>설치된 기초 등급의 작업 모듈입니다. 건설, 채굴 및 제초/벌목 능력을 잠금해제합니다.</MaidModule_Work_Basic.description>
+  <MaidModule_Work_Standard.label>작업 모듈 (표준)</MaidModule_Work_Standard.label>
+  <MaidModule_Work_Standard.description>설치된 표준 등급의 작업 모듈입니다. 건설, 채굴 및 제초/벌목 능력을 잠금해제합니다.</MaidModule_Work_Standard.description>
+  <MaidModule_Work_High.label>작업 모듈 (고급)</MaidModule_Work_High.label>
+  <MaidModule_Work_High.description>설치된 고급 등급의 작업 모듈입니다. 건설, 채굴 및 제초/벌목 능력을 잠금해제합니다.</MaidModule_Work_High.description>
+  <MaidModule_Work_Ultra.label>작업 모듈 (초고급)</MaidModule_Work_Ultra.label>
+  <MaidModule_Work_Ultra.description>설치된 초고급 등급의 작업 모듈입니다. 건설, 채굴 및 제초/벌목 능력을 잠금해제합니다.</MaidModule_Work_Ultra.description>
+
+  <!-- Research Module -->
+  <MaidModule_Research_Basic.label>연구 모듈 (기초)</MaidModule_Research_Basic.label>
+  <MaidModule_Research_Basic.description>설치된 기초 등급의 연구 모듈입니다. 연구 및 공허 조사 능력을 잠금해제합니다.</MaidModule_Research_Basic.description>
+  <MaidModule_Research_Standard.label>연구 모듈 (표준)</MaidModule_Research_Standard.label>
+  <MaidModule_Research_Standard.description>설치된 표준 등급의 연구 모듈입니다. 연구 및 공허 조사 능력을 잠금해제합니다.</MaidModule_Research_Standard.description>
+  <MaidModule_Research_High.label>연구 모듈 (고급)</MaidModule_Research_High.label>
+  <MaidModule_Research_High.description>설치된 고급 등급의 연구 모듈입니다. 연구 및 공허 조사 능력을 잠금해제합니다.</MaidModule_Research_High.description>
+  <MaidModule_Research_Ultra.label>연구 모듈 (초고급)</MaidModule_Research_Ultra.label>
+  <MaidModule_Research_Ultra.description>설치된 초고급 등급의 연구 모듈입니다. 연구 및 공허 조사 능력을 잠금해제합니다.</MaidModule_Research_Ultra.description>
+
+  <!-- Agriculture Module -->
+  <MaidModule_Agriculture_Basic.label>농업 모듈 (기초)</MaidModule_Agriculture_Basic.label>
+  <MaidModule_Agriculture_Basic.description>설치된 기초 등급의 농업 모듈입니다. 재배, 제초/벌목 및 조련 능력을 잠금해제합니다.</MaidModule_Agriculture_Basic.description>
+  <MaidModule_Agriculture_Standard.label>농업 모듈 (표준)</MaidModule_Agriculture_Standard.label>
+  <MaidModule_Agriculture_Standard.description>설치된 표준 등급의 농업 모듈입니다. 재배, 제초/벌목 및 조련 능력을 잠금해제합니다.</MaidModule_Agriculture_Standard.description>
+  <MaidModule_Agriculture_High.label>농업 모듈 (고급)</MaidModule_Agriculture_High.label>
+  <MaidModule_Agriculture_High.description>설치된 고급 등급의 농업 모듈입니다. 재배, 제초/벌목 및 조련 능력을 잠금해제합니다.</MaidModule_Agriculture_High.description>
+  <MaidModule_Agriculture_Ultra.label>농업 모듈 (초고급)</MaidModule_Agriculture_Ultra.label>
+  <MaidModule_Agriculture_Ultra.description>설치된 초고급 등급의 농업 모듈입니다. 재배, 제초/벌목 및 조련 능력을 잠금해제합니다.</MaidModule_Agriculture_Ultra.description>
+
+  <!-- Crafting Module -->
+  <MaidModule_Crafting_Basic.label>제작 모듈 (기초)</MaidModule_Crafting_Basic.label>
+  <MaidModule_Crafting_Basic.description>설치된 기초 등급의 제작 모듈입니다. 가공, 제작, 재봉 및 예술 능력을 잠금해제합니다.</MaidModule_Crafting_Basic.description>
+  <MaidModule_Crafting_Standard.label>제작 모듈 (표준)</MaidModule_Crafting_Standard.label>
+  <MaidModule_Crafting_Standard.description>설치된 표준 등급의 제작 모듈입니다. 가공, 제작, 재봉 및 예술 능력을 잠금해제합니다.</MaidModule_Crafting_Standard.description>
+  <MaidModule_Crafting_High.label>제작 모듈 (고급)</MaidModule_Crafting_High.label>
+  <MaidModule_Crafting_High.description>설치된 고급 등급의 제작 모듈입니다. 가공, 제작, 재봉 및 예술 능력을 잠금해제합니다.</MaidModule_Crafting_High.description>
+  <MaidModule_Crafting_Ultra.label>제작 모듈 (초고급)</MaidModule_Crafting_Ultra.label>
+  <MaidModule_Crafting_Ultra.description>설치된 초고급 등급의 제작 모듈입니다. 가공, 제작, 재봉 및 예술 능력을 잠금해제합니다.</MaidModule_Crafting_Ultra.description>
+
+  <!-- ==================== Maid External Modifications (Korean Translations) ==================== -->
+  <MaidMod_OpticalLens.label>광학 렌즈 개조</MaidMod_OpticalLens.label>
+  <MaidMod_OpticalLens.description>사격 정확도를 향상시키는 광학 초점 렌즈 장치입니다.</MaidMod_OpticalLens.description>
+  <MaidMod_OpticalLens.stages.0.label>기초</MaidMod_OpticalLens.stages.0.label>
+  <MaidMod_OpticalLens.stages.1.label>표준</MaidMod_OpticalLens.stages.1.label>
+  <MaidMod_OpticalLens.stages.2.label>고급</MaidMod_OpticalLens.stages.2.label>
+  <MaidMod_OpticalLens.stages.3.label>초고급</MaidMod_OpticalLens.stages.3.label>
+
+  <MaidMod_TasteSensor.label>미각 센서 개조</MaidMod_TasteSensor.label>
+  <MaidMod_TasteSensor.description>정밀한 맛 분석과 효율적인 조리 처리를 가능하게 해주는 미각 측정 장치입니다.</MaidMod_TasteSensor.description>
+  <MaidMod_TasteSensor.stages.0.label>기초</MaidMod_TasteSensor.stages.0.label>
+  <MaidMod_TasteSensor.stages.1.label>표준</MaidMod_TasteSensor.stages.1.label>
+  <MaidMod_TasteSensor.stages.2.label>고급</MaidMod_TasteSensor.stages.2.label>
+  <MaidMod_TasteSensor.stages.3.label>초고급</MaidMod_TasteSensor.stages.3.label>
+
+  <MaidMod_SmellSensor.label>후각 센서 개조</MaidMod_SmellSensor.label>
+  <MaidMod_SmellSensor.description>재료의 신선도를 감지하여 조리 중 발생하는 식중독 확률을 감소시킵니다.</MaidMod_SmellSensor.description>
+  <MaidMod_SmellSensor.stages.0.label>기초</MaidMod_SmellSensor.stages.0.label>
+  <MaidMod_SmellSensor.stages.1.label>표준</MaidMod_SmellSensor.stages.1.label>
+  <MaidMod_SmellSensor.stages.2.label>고급</MaidMod_SmellSensor.stages.2.label>
+  <MaidMod_SmellSensor.stages.3.label>초고급</MaidMod_SmellSensor.stages.3.label>
+
+  <MaidMod_StorageModule.label>저장 모듈 개조</MaidMod_StorageModule.label>
+  <MaidMod_StorageModule.description>운반 작업 시 더 많은 물품을 임시 수납할 수 있도록 외형 프레임을 개조합니다.</MaidMod_StorageModule.description>
+  <MaidMod_StorageModule.stages.0.label>기초</MaidMod_StorageModule.stages.0.label>
+  <MaidMod_StorageModule.stages.1.label>표준</MaidMod_StorageModule.stages.1.label>
+  <MaidMod_StorageModule.stages.2.label>고급</MaidMod_StorageModule.stages.2.label>
+  <MaidMod_StorageModule.stages.3.label>초고급</MaidMod_StorageModule.stages.3.label>
+
+  <MaidMod_ShockAbsorber.label>충격 흡수 개조</MaidMod_ShockAbsorber.label>
+  <MaidMod_ShockAbsorber.description>물리적인 타격을 감쇄시키는 완충 흡수 구조를 내장하여 둔탁함 방어력을 증가시킵니다.</MaidMod_ShockAbsorber.description>
+  <MaidMod_ShockAbsorber.stages.0.label>기초</MaidMod_ShockAbsorber.stages.0.label>
+  <MaidMod_ShockAbsorber.stages.1.label>표준</MaidMod_ShockAbsorber.stages.1.label>
+  <MaidMod_ShockAbsorber.stages.2.label>고급</MaidMod_ShockAbsorber.stages.2.label>
+  <MaidMod_ShockAbsorber.stages.3.label>초고급</MaidMod_ShockAbsorber.stages.3.label>
+
+  <MaidMod_Battery.label>배터리 최적화 개조</MaidMod_Battery.label>
+  <MaidMod_Battery.description>연산 효율 개선 및 전력 분배 장치를 고밀도로 장착하여 작동 대기 전력을 절약합니다.</MaidMod_Battery.description>
+  <MaidMod_Battery.stages.0.label>기초</MaidMod_Battery.stages.0.label>
+  <MaidMod_Battery.stages.1.label>표준</MaidMod_Battery.stages.1.label>
+  <MaidMod_Battery.stages.2.label>고급</MaidMod_Battery.stages.2.label>
+  <MaidMod_Battery.stages.3.label>초고급</MaidMod_Battery.stages.3.label>
+
+  <MaidMod_FastCharger.label>고속 충전 개조</MaidMod_FastCharger.label>
+  <MaidMod_FastCharger.description>고효율 전력 입력 커플러를 탑재하여 충전 중 에너지 충전 속도를 가속합니다.</MaidMod_FastCharger.description>
+  <MaidMod_FastCharger.stages.0.label>기초</MaidMod_FastCharger.stages.0.label>
+  <MaidMod_FastCharger.stages.1.label>표준</MaidMod_FastCharger.stages.1.label>
+  <MaidMod_FastCharger.stages.2.label>고급</MaidMod_FastCharger.stages.2.label>
+  <MaidMod_FastCharger.stages.3.label>초고급</MaidMod_FastCharger.stages.3.label>
+
+  <MaidMod_PrecisionSensor.label>정밀 센서 개조</MaidMod_PrecisionSensor.label>
+  <MaidMod_PrecisionSensor.description>미세한 보정을 처리하는 조인트를 양팔에 이식하여 메이드의 전반적인 작업 속도를 가속합니다.</MaidMod_PrecisionSensor.description>
+  <MaidMod_PrecisionSensor.stages.0.label>기초</MaidMod_PrecisionSensor.stages.0.label>
+  <MaidMod_PrecisionSensor.stages.1.label>표준</MaidMod_PrecisionSensor.stages.1.label>
+  <MaidMod_PrecisionSensor.stages.2.label>고급</MaidMod_PrecisionSensor.stages.2.label>
+  <MaidMod_PrecisionSensor.stages.3.label>초고급</MaidMod_PrecisionSensor.stages.3.label>
+
+  <MaidMod_PowerActuator.label>동력 장치 개조</MaidMod_PowerActuator.label>
+  <MaidMod_PowerActuator.description>고출력 액추에이터를 통해 격투 공격 명중률과 장갑 관통 능력을 끌어올립니다.</MaidMod_PowerActuator.description>
+  <MaidMod_PowerActuator.stages.0.label>기초</MaidMod_PowerActuator.stages.0.label>
+  <MaidMod_PowerActuator.stages.1.label>표준</MaidMod_PowerActuator.stages.1.label>
+  <MaidMod_PowerActuator.stages.2.label>고급</MaidMod_PowerActuator.stages.2.label>
+  <MaidMod_PowerActuator.stages.3.label>초고급</MaidMod_PowerActuator.stages.3.label>
+
+  <MaidMod_MobilityEquipment.label>기동 장비 개조</MaidMod_MobilityEquipment.label>
+  <MaidMod_MobilityEquipment.description>다리 프레임 및 유압 시스템 조정을 통해 이동력을 상승시킵니다.</MaidMod_MobilityEquipment.description>
+  <MaidMod_MobilityEquipment.stages.0.label>기초</MaidMod_MobilityEquipment.stages.0.label>
+  <MaidMod_MobilityEquipment.stages.1.label>표준</MaidMod_MobilityEquipment.stages.1.label>
+  <MaidMod_MobilityEquipment.stages.2.label>고급</MaidMod_MobilityEquipment.stages.2.label>
+  <MaidMod_MobilityEquipment.stages.3.label>초고급</MaidMod_MobilityEquipment.stages.3.label>
+
+  <MaidMod_Armor_Head.label>머리 장갑판 추가</MaidMod_Armor_Head.label>
+  <MaidMod_Armor_Head.description>머리 모듈에 보강 장갑판을 둘러 모든 속성의 방어도를 향상시킵니다.</MaidMod_Armor_Head.description>
+  <MaidMod_Armor_Head.stages.0.label>기초</MaidMod_Armor_Head.stages.0.label>
+  <MaidMod_Armor_Head.stages.1.label>표준</MaidMod_Armor_Head.stages.1.label>
+  <MaidMod_Armor_Head.stages.2.label>고급</MaidMod_Armor_Head.stages.2.label>
+  <MaidMod_Armor_Head.stages.3.label>초고급</MaidMod_Armor_Head.stages.3.label>
+
+  <MaidMod_Armor_Body.label>몸통 장갑판 추가</MaidMod_Armor_Body.label>
+  <MaidMod_Armor_Body.description>흉부 및 몸통 쉘 외곽에 장갑 플레이트를 조립하여 모든 속성의 방어도를 향상시킵니다.</MaidMod_Armor_Body.description>
+  <MaidMod_Armor_Body.stages.0.label>기초</MaidMod_Armor_Body.stages.0.label>
+  <MaidMod_Armor_Body.stages.1.label>표준</MaidMod_Armor_Body.stages.1.label>
+  <MaidMod_Armor_Body.stages.2.label>고급</MaidMod_Armor_Body.stages.2.label>
+  <MaidMod_Armor_Body.stages.3.label>초고급</MaidMod_Armor_Body.stages.3.label>
+
+  <MaidMod_Armor_Arm.label>팔 장갑판 추가</MaidMod_Armor_Arm.label>
+  <MaidMod_Armor_Arm.description>팔 부분 구조에 밀폐 장갑을 부착하여 모든 속성의 방어도를 향상시킵니다.</MaidMod_Armor_Arm.description>
+  <MaidMod_Armor_Arm.stages.0.label>기초</MaidMod_Armor_Arm.stages.0.label>
+  <MaidMod_Armor_Arm.stages.1.label>표준</MaidMod_Armor_Arm.stages.1.label>
+  <MaidMod_Armor_Arm.stages.2.label>고급</MaidMod_Armor_Arm.stages.2.label>
+  <MaidMod_Armor_Arm.stages.3.label>초고급</MaidMod_Armor_Arm.stages.3.label>
+
+  <MaidMod_Armor_Leg.label>다리 장갑판 추가</MaidMod_Armor_Leg.label>
+  <MaidMod_Armor_Leg.description>다리 부분 외피에 방어구 구조를 추가 덧대어 모든 속성의 방어도를 향상시킵니다.</MaidMod_Armor_Leg.description>
+  <MaidMod_Armor_Leg.stages.0.label>기초</MaidMod_Armor_Leg.stages.0.label>
+  <MaidMod_Armor_Leg.stages.1.label>표준</MaidMod_Armor_Leg.stages.1.label>
+  <MaidMod_Armor_Leg.stages.2.label>고급</MaidMod_Armor_Leg.stages.2.label>
+  <MaidMod_Armor_Leg.stages.3.label>초고급</MaidMod_Armor_Leg.stages.3.label>
+</LanguageData>

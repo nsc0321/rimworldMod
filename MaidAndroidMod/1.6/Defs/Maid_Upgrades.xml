@@ -1,65 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <!-- ==================== Maid Upgrade Workbench (BuildingDef) ==================== -->
+  <!-- ==================== Maid Module Installation Bench (BuildingDef) ==================== -->
   <ThingDef ParentName="BenchBase">
-    <defName>MaidAssemblyBench</defName>
-    <label>maid maintenance assembly</label>
-    <description>A specialized assembly and maintenance station designed to manufacture upgrade sub-processors and modules for domestic mechanoids.</description>
+    <defName>MaidModuleInstallationBench</defName>
+    <label>maid module installation bench</label>
+    <description>A specialized maintenance station designed to safely install and extract upgrade sub-processors and modules for domestic mechanoids.</description>
     <thingClass>Building_WorkTable</thingClass>
     <graphicData>
       <texPath>Things/Building/Production/MaidAssemblyBench</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(2.5, 1.5)</drawSize>
+      <drawSize>(3.5, 2.5)</drawSize>
     </graphicData>
     <castEdgeShadows>true</castEdgeShadows>
     <staticSunShadowHeight>0.20</staticSunShadowHeight>
     <costList>
       <Steel>100</Steel>
-      <ComponentIndustrial>5</ComponentIndustrial>
+      <ComponentIndustrial>3</ComponentIndustrial>
     </costList>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
     <altitudeLayer>Building</altitudeLayer>
     <fillPercent>0.5</fillPercent>
     <useHitPoints>true</useHitPoints>
     <statBases>
       <MaxHitPoints>180</MaxHitPoints>
-      <WorkToBuild>2000</WorkToBuild>
+      <WorkToBuild>1500</WorkToBuild>
       <Flammability>0.5</Flammability>
+      <Mass>30</Mass>
     </statBases>
     <size>(3,2)</size>
-    <designationCategory>Production</designationCategory>
+    <designationCategory>Biotech</designationCategory>
     <passability>PassThroughOnly</passability>
     <pathCost>50</pathCost>
     <hasInteractionCell>true</hasInteractionCell>
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <surfaceType>Item</surfaceType>
     <recipes>
-      <li>Make_MaidChip_Cook</li>
-      <li>Make_MaidChip_Grow</li>
-      <li>Make_MaidChip_Craft</li>
-      <li>Make_MaidChip_Mine</li>
-      <li>Make_MaidChip_Construct</li>
-      <li>Make_MaidChip_Art</li>
-      <li>Make_MaidChip_Warden</li>
-      <li>Make_MaidChip_Research</li>
-      <li>Make_MaidChip_Doctor</li>
-      <li>Make_MaidChip_Combat</li>
-      <!-- Direct Upgrades -->
-      <li>UpgradeMaid_Cook</li>
-      <li>UpgradeMaid_Grow</li>
-      <li>UpgradeMaid_Craft</li>
-      <li>UpgradeMaid_Mine</li>
-      <li>UpgradeMaid_Construct</li>
-      <li>UpgradeMaid_Art</li>
-      <li>UpgradeMaid_Warden</li>
-      <li>UpgradeMaid_Research</li>
-      <li>UpgradeMaid_Doctor</li>
-      <li>UpgradeMaid_Combat</li>
+      <!-- Direct Upgrades - Basic Tier -->
+      <li>UpgradeMaid_Combat_Basic</li>
+      <li>UpgradeMaid_Rescue_Basic</li>
+      <li>UpgradeMaid_Domestic_Basic</li>
+      <li>UpgradeMaid_Work_Basic</li>
+      <li>UpgradeMaid_Research_Basic</li>
+      <li>UpgradeMaid_Agriculture_Basic</li>
+      <li>UpgradeMaid_Crafting_Basic</li>
+
+      <!-- Direct Upgrades - Standard Tier -->
+      <li>UpgradeMaid_Combat_Standard</li>
+      <li>UpgradeMaid_Rescue_Standard</li>
+      <li>UpgradeMaid_Domestic_Standard</li>
+      <li>UpgradeMaid_Work_Standard</li>
+      <li>UpgradeMaid_Research_Standard</li>
+      <li>UpgradeMaid_Agriculture_Standard</li>
+      <li>UpgradeMaid_Crafting_Standard</li>
+
+      <!-- Direct Upgrades - High Tier -->
+      <li>UpgradeMaid_Combat_High</li>
+      <li>UpgradeMaid_Rescue_High</li>
+      <li>UpgradeMaid_Domestic_High</li>
+      <li>UpgradeMaid_Work_High</li>
+      <li>UpgradeMaid_Research_High</li>
+      <li>UpgradeMaid_Agriculture_High</li>
+      <li>UpgradeMaid_Crafting_High</li>
+
+      <!-- Direct Upgrades - Ultra Tier -->
+      <li>UpgradeMaid_Combat_Ultra</li>
+      <li>UpgradeMaid_Rescue_Ultra</li>
+      <li>UpgradeMaid_Domestic_Ultra</li>
+      <li>UpgradeMaid_Work_Ultra</li>
+      <li>UpgradeMaid_Research_Ultra</li>
+      <li>UpgradeMaid_Agriculture_Ultra</li>
+      <li>UpgradeMaid_Crafting_Ultra</li>
+
+      <!-- Module Removals -->
+      <li>RemoveMaid_Combat</li>
+      <li>RemoveMaid_Rescue</li>
+      <li>RemoveMaid_Domestic</li>
+      <li>RemoveMaid_Work</li>
+      <li>RemoveMaid_Research</li>
+      <li>RemoveMaid_Agriculture</li>
+      <li>RemoveMaid_Crafting</li>
     </recipes>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
-        <basePowerConsumption>150</basePowerConsumption>
+        <basePowerConsumption>100</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable"/>
       <li Class="MaidAndroidMod.CompProperties_MaidAssembly"/>
@@ -69,119 +100,150 @@
     </building>
   </ThingDef>
 
-  <!-- ==================== Upgrade Chip Items (ThingDef) ==================== -->
-  <ThingDef ParentName="ResourceBase" Name="MaidChipBase" Abstract="True">
-    <graphicData>
-      <texPath>Things/Item/Resource/SubcoreBasic</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <soundInteract>Metal_Drop</soundInteract>
-    <soundDrop>Metal_Drop</soundDrop>
-    <statBases>
-      <MarketValue>250</MarketValue>
-      <Mass>0.1</Mass>
-    </statBases>
-    <tradeTags>
-      <li>ExoticMisc</li>
-    </tradeTags>
-  </ThingDef>
-
-  <ThingDef ParentName="MaidChipBase"><defName>MaidChip_Cook</defName><label>domestic culinary processor</label><description>Advanced culinary processor chip loading cooking subroutines into maid mechanoids.</description></ThingDef>
-  <ThingDef ParentName="MaidChipBase"><defName>MaidChip_Grow</defName><label>gardening processor module</label><description>Agricultural processor chip programmed with farming and gardening subroutines.</description></ThingDef>
-  <ThingDef ParentName="MaidChipBase"><defName>MaidChip_Craft</defName><label>tailoring processor module</label><description>Tailoring and fabrication chip module loaded with sewing and component crafting algorithms.</description></ThingDef>
-  <ThingDef ParentName="MaidChipBase"><defName>MaidChip_Mine</defName><label>excavation processor module</label><description>Heavy excavation chip module programmed with rock-drilling and mining subroutines.</description></ThingDef>
-  <ThingDef ParentName="MaidChipBase"><defName>MaidChip_Construct</defName><label>engineering construction module</label><description>Structural construction and building assembly subroutine chip module.</description></ThingDef>
-  <ThingDef ParentName="MaidChipBase"><defName>MaidChip_Art</defName><label>sculpting artistic module</label><description>Fine art, sculpting, and aesthetic carving subroutine chip module.</description></ThingDef>
-  <ThingDef ParentName="MaidChipBase"><defName>MaidChip_Warden</defName><label>warden diplomatic module</label><description>Social diplomacy, warden, and negotiation subroutine chip module.</description></ThingDef>
-  <ThingDef ParentName="MaidChipBase"><defName>MaidChip_Research</defName><label>scientific research module</label><description>High-speed laboratory analysis and scientific calculation subroutine chip module.</description></ThingDef>
-  <ThingDef ParentName="MaidChipBase"><defName>MaidChip_Doctor</defName><label>clinical medical module</label><description>Surgical operation and primary medical care subroutine chip module.</description></ThingDef>
-  <ThingDef ParentName="MaidChipBase"><defName>MaidChip_Combat</defName><label>tactical combat module</label><description>Security weapon handling and combat targeting subroutines. Unlocks the capability to equip standard firearms and melee weapons.</description></ThingDef>
-
   <!-- ==================== HediffDefs (Installed Upgrades) ==================== -->
   <HediffDef ParentName="ImplantHediffBase" Name="MaidModuleBase" Abstract="True">
     <maxSeverity>1.0</maxSeverity>
   </HediffDef>
 
-  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Cook</defName><label>domestic culinary processor</label><description>Installed culinary processor enabling meal preparation and butchery routines.</description><spawnThingOnRemoved>MaidChip_Cook</spawnThingOnRemoved></HediffDef>
-  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Grow</defName><label>gardening processor module</label><description>Installed gardening processor enabling sowing, harvesting, and botanical management.</description><spawnThingOnRemoved>MaidChip_Grow</spawnThingOnRemoved></HediffDef>
-  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Craft</defName><label>tailoring processor module</label><description>Installed tailoring processor enabling crafting, sewing, and assembly routines.</description><spawnThingOnRemoved>MaidChip_Craft</spawnThingOnRemoved></HediffDef>
-  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Mine</defName><label>excavation processor module</label><description>Installed excavation processor enabling mining, quarry work, and rock carving.</description><spawnThingOnRemoved>MaidChip_Mine</spawnThingOnRemoved></HediffDef>
-  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Construct</defName><label>engineering construction module</label><description>Installed construction processor enabling structural building, furniture assembly, and deconstruction.</description><spawnThingOnRemoved>MaidChip_Construct</spawnThingOnRemoved></HediffDef>
-  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Art</defName><label>sculpting artistic module</label><description>Installed artistic processor enabling sculpting, painting, and visual creations.</description><spawnThingOnRemoved>MaidChip_Art</spawnThingOnRemoved></HediffDef>
-  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Warden</defName><label>warden diplomatic module</label><description>Installed social processor enabling prisoner wardening and diplomatic interactions.</description><spawnThingOnRemoved>MaidChip_Warden</spawnThingOnRemoved></HediffDef>
-  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Research</defName><label>scientific research module</label><description>Installed research processor enabling scientific calculation and high-speed laboratory analysis.</description><spawnThingOnRemoved>MaidChip_Research</spawnThingOnRemoved></HediffDef>
-  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Doctor</defName><label>clinical medical module</label><description>Installed medical processor enabling clinical diagnosis, pharmaceutical treatment, and surgical operations.</description><spawnThingOnRemoved>MaidChip_Doctor</spawnThingOnRemoved></HediffDef>
-  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Combat</defName><label>tactical combat module</label><description>Installed combat processor providing defensive algorithms. Unlocks the ability to pick up and equip vanilla primary weapons.</description><spawnThingOnRemoved>MaidChip_Combat</spawnThingOnRemoved></HediffDef>
+  <!-- Basic Tiers (Level 5) -->
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Combat_Basic</defName><label>combat module (basic)</label><description>Installed basic combat processor. Unlocks weapon equipping, shooting, melee, and hunting.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Rescue_Basic</defName><label>rescue module (basic)</label><description>Installed basic rescue processor. Unlocks medical treatment and firefighting.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Domestic_Basic</defName><label>domestic module (basic)</label><description>Installed basic domestic processor. Unlocks cooking, tailoring, warden, and childcare.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Work_Basic</defName><label>work module (basic)</label><description>Installed basic work processor. Unlocks mining, construction, and logging/plant cutting.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Research_Basic</defName><label>research module (basic)</label><description>Installed basic research processor. Unlocks scientific research and void study.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Agriculture_Basic</defName><label>agriculture module (basic)</label><description>Installed basic agriculture processor. Unlocks sowing, harvesting, taming, and logging.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Crafting_Basic</defName><label>crafting module (basic)</label><description>Installed basic crafting processor. Unlocks crafting, smithing, tailoring, and art.</description></HediffDef>
 
-  <!-- ==================== Recipes (Chip Manufacturing) ==================== -->
-  <RecipeDef Name="MakeMaidChipBase" Abstract="True">
-    <workAmount>1500</workAmount>
+  <!-- Standard Tiers (Level 8) -->
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Combat_Standard</defName><label>combat module (standard)</label><description>Installed standard combat processor. Unlocks weapon equipping, shooting, melee, and hunting.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Rescue_Standard</defName><label>rescue module (standard)</label><description>Installed standard rescue processor. Unlocks medical treatment and firefighting.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Domestic_Standard</defName><label>domestic module (standard)</label><description>Installed standard domestic processor. Unlocks cooking, tailoring, warden, and childcare.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Work_Standard</defName><label>work module (standard)</label><description>Installed standard work processor. Unlocks mining, construction, and logging/plant cutting.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Research_Standard</defName><label>research module (standard)</label><description>Installed standard research processor. Unlocks scientific research and void study.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Agriculture_Standard</defName><label>agriculture module (standard)</label><description>Installed standard agriculture processor. Unlocks sowing, harvesting, taming, and logging.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Crafting_Standard</defName><label>crafting module (standard)</label><description>Installed standard crafting processor. Unlocks crafting, smithing, tailoring, and art.</description></HediffDef>
+
+  <!-- High Tiers (Level 12) -->
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Combat_High</defName><label>combat module (high)</label><description>Installed high combat processor. Unlocks weapon equipping, shooting, melee, and hunting.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Rescue_High</defName><label>rescue module (high)</label><description>Installed high rescue processor. Unlocks medical treatment and firefighting.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Domestic_High</defName><label>domestic module (high)</label><description>Installed high domestic processor. Unlocks cooking, tailoring, warden, and childcare.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Work_High</defName><label>work module (high)</label><description>Installed high work processor. Unlocks mining, construction, and logging/plant cutting.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Research_High</defName><label>research module (high)</label><description>Installed high research processor. Unlocks scientific research and void study.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Agriculture_High</defName><label>agriculture module (high)</label><description>Installed high agriculture processor. Unlocks sowing, harvesting, taming, and logging.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Crafting_High</defName><label>crafting module (high)</label><description>Installed high crafting processor. Unlocks crafting, smithing, tailoring, and art.</description></HediffDef>
+
+  <!-- Ultra Tiers (Level 15) -->
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Combat_Ultra</defName><label>combat module (ultra)</label><description>Installed ultra combat processor. Unlocks weapon equipping, shooting, melee, and hunting.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Rescue_Ultra</defName><label>rescue module (ultra)</label><description>Installed ultra rescue processor. Unlocks medical treatment and firefighting.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Domestic_Ultra</defName><label>domestic module (ultra)</label><description>Installed ultra domestic processor. Unlocks cooking, tailoring, warden, and childcare.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Work_Ultra</defName><label>work module (ultra)</label><description>Installed ultra work processor. Unlocks mining, construction, and logging/plant cutting.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Research_Ultra</defName><label>research module (ultra)</label><description>Installed ultra research processor. Unlocks scientific research and void study.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Agriculture_Ultra</defName><label>agriculture module (ultra)</label><description>Installed ultra agriculture processor. Unlocks sowing, harvesting, taming, and logging.</description></HediffDef>
+  <HediffDef ParentName="MaidModuleBase"><defName>MaidModule_Crafting_Ultra</defName><label>crafting module (ultra)</label><description>Installed ultra crafting processor. Unlocks crafting, smithing, tailoring, and art.</description></HediffDef>
+
+  <!-- ==================== Direct Upgrade Recipes (At the Bench) ==================== -->
+  
+  <!-- Basic Upgrade Recipe Parent (Stat 5) -->
+  <RecipeDef Name="UpgradeMaidBasicBase" Abstract="True">
+    <workAmount>2500</workAmount>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <workSkill>Crafting</workSkill>
     <effectWorking>Cook</effectWorking>
     <soundWorking>Recipe_Machining</soundWorking>
     <ingredients>
       <li>
-        <filter><thingDefs><li>Steel</li></thingDefs></filter>
-        <count>30</count>
-      </li>
-      <li>
         <filter><thingDefs><li>SubcoreBasic</li></thingDefs></filter>
         <count>1</count>
       </li>
     </ingredients>
+    <researchPrerequisite>BasicMechtech</researchPrerequisite>
   </RecipeDef>
 
-  <RecipeDef ParentName="MakeMaidChipBase"><defName>Make_MaidChip_Cook</defName><label>assemble culinary processor</label><description>Assemble a culinary processor chip.</description><jobString>Assembling culinary processor.</jobString><products><MaidChip_Cook>1</MaidChip_Cook></products></RecipeDef>
-  <RecipeDef ParentName="MakeMaidChipBase"><defName>Make_MaidChip_Grow</defName><label>assemble gardening processor</label><description>Assemble a gardening processor chip.</description><jobString>Assembling gardening processor.</jobString><products><MaidChip_Grow>1</MaidChip_Grow></products></RecipeDef>
-  <RecipeDef ParentName="MakeMaidChipBase"><defName>Make_MaidChip_Craft</defName><label>assemble tailoring processor</label><description>Assemble a tailoring processor chip.</description><jobString>Assembling tailoring processor.</jobString><products><MaidChip_Craft>1</MaidChip_Craft></products></RecipeDef>
-  <RecipeDef ParentName="MakeMaidChipBase"><defName>Make_MaidChip_Mine</defName><label>assemble excavation processor</label><description>Assemble an excavation processor chip.</description><jobString>Assembling excavation processor.</jobString><products><MaidChip_Mine>1</MaidChip_Mine></products></RecipeDef>
-  <RecipeDef ParentName="MakeMaidChipBase"><defName>Make_MaidChip_Construct</defName><label>assemble construction module</label><description>Assemble an engineering construction module chip.</description><jobString>Assembling construction module.</jobString><products><MaidChip_Construct>1</MaidChip_Construct></products></RecipeDef>
-  <RecipeDef ParentName="MakeMaidChipBase"><defName>Make_MaidChip_Art</defName><label>assemble artistic module</label><description>Assemble an artistic sculpting module chip.</description><jobString>Assembling artistic module.</jobString><products><MaidChip_Art>1</MaidChip_Art></products></RecipeDef>
-  <RecipeDef ParentName="MakeMaidChipBase"><defName>Make_MaidChip_Warden</defName><label>assemble warden module</label><description>Assemble a warden diplomatic module chip.</description><jobString>Assembling warden module.</jobString><products><MaidChip_Warden>1</MaidChip_Warden></products></RecipeDef>
-  <RecipeDef ParentName="MakeMaidChipBase"><defName>Make_MaidChip_Research</defName><label>assemble research module</label><description>Assemble a research laboratory module chip.</description><jobString>Assembling research module.</jobString><products><MaidChip_Research>1</MaidChip_Research></products></RecipeDef>
-  <RecipeDef ParentName="MakeMaidChipBase"><defName>Make_MaidChip_Doctor</defName><label>assemble medical module</label><description>Assemble a clinical medical module chip.</description><jobString>Assembling medical module.</jobString><products><MaidChip_Doctor>1</MaidChip_Doctor></products></RecipeDef>
-  <RecipeDef ParentName="MakeMaidChipBase"><defName>Make_MaidChip_Combat</defName><label>assemble combat module</label><description>Assemble a tactical combat module chip.</description><jobString>Assembling combat module.</jobString><products><MaidChip_Combat>1</MaidChip_Combat></products></RecipeDef>
-
-  <!-- ==================== Surgery Recipes (Installations) ==================== -->
-  <RecipeDef ParentName="SurgeryFlesh" Name="InstallMaidModuleBase" Abstract="True">
-    <workerClass>Recipe_InstallImplant</workerClass>
-    <workAmount>2000</workAmount>
-    <appliedOnFixedBodyParts>
-      <li>MechanicalHead</li>
-    </appliedOnFixedBodyParts>
+  <!-- Standard Upgrade Recipe Parent (Stat 8) -->
+  <RecipeDef Name="UpgradeMaidStandardBase" ParentName="UpgradeMaidBasicBase" Abstract="True">
+    <ingredients Inherit="False">
+      <li>
+        <filter><thingDefs><li>SubcoreRegular</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <researchPrerequisite>StandardMechtech</researchPrerequisite>
   </RecipeDef>
 
-  <RecipeDef ParentName="InstallMaidModuleBase"><defName>InstallMaidModule_Cook</defName><label>install culinary processor</label><description>Install a domestic culinary processor chip into the maid's brain receptor.</description><jobString>Installing culinary processor.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Cook</li></thingDefs></filter><count>1</count></li></ingredients><addsHediff>MaidModule_Cook</addsHediff></RecipeDef>
-  <RecipeDef ParentName="InstallMaidModuleBase"><defName>InstallMaidModule_Grow</defName><label>install gardening processor</label><description>Install a gardening processor chip into the maid's brain receptor.</description><jobString>Installing gardening processor.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Grow</li></thingDefs></filter><count>1</count></li></ingredients><addsHediff>MaidModule_Grow</addsHediff></RecipeDef>
-  <RecipeDef ParentName="InstallMaidModuleBase"><defName>InstallMaidModule_Craft</defName><label>install tailoring processor</label><description>Install a tailoring processor chip into the maid's brain receptor.</description><jobString>Installing tailoring processor.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Craft</li></thingDefs></filter><count>1</count></li></ingredients><addsHediff>MaidModule_Craft</addsHediff></RecipeDef>
-  <RecipeDef ParentName="InstallMaidModuleBase"><defName>InstallMaidModule_Mine</defName><label>install excavation processor</label><description>Install an excavation processor chip into the maid's brain receptor.</description><jobString>Installing excavation processor.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Mine</li></thingDefs></filter><count>1</count></li></ingredients><addsHediff>MaidModule_Mine</addsHediff></RecipeDef>
-  <RecipeDef ParentName="InstallMaidModuleBase"><defName>InstallMaidModule_Construct</defName><label>install construction module</label><description>Install an engineering construction module chip into the maid's brain receptor.</description><jobString>Installing construction module.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Construct</li></thingDefs></filter><count>1</count></li></ingredients><addsHediff>MaidModule_Construct</addsHediff></RecipeDef>
-  <RecipeDef ParentName="InstallMaidModuleBase"><defName>InstallMaidModule_Art</defName><label>install artistic module</label><description>Install an artistic sculpting module chip into the maid's brain receptor.</description><jobString>Installing artistic module.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Art</li></thingDefs></filter><count>1</count></li></ingredients><addsHediff>MaidModule_Art</addsHediff></RecipeDef>
-  <RecipeDef ParentName="InstallMaidModuleBase"><defName>InstallMaidModule_Warden</defName><label>install warden module</label><description>Install a warden diplomatic module chip into the maid's brain receptor.</description><jobString>Installing warden module.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Warden</li></thingDefs></filter><count>1</count></li></ingredients><addsHediff>MaidModule_Warden</addsHediff></RecipeDef>
-  <RecipeDef ParentName="InstallMaidModuleBase"><defName>InstallMaidModule_Research</defName><label>install research module</label><description>Install a research laboratory module chip into the maid's brain receptor.</description><jobString>Installing research module.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Research</li></thingDefs></filter><count>1</count></li></ingredients><addsHediff>MaidModule_Research</addsHediff></RecipeDef>
-  <RecipeDef ParentName="InstallMaidModuleBase"><defName>InstallMaidModule_Doctor</defName><label>install medical module</label><description>Install a clinical medical module chip into the maid's brain receptor.</description><jobString>Installing medical module.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Doctor</li></thingDefs></filter><count>1</count></li></ingredients><addsHediff>MaidModule_Doctor</addsHediff></RecipeDef>
-  <RecipeDef ParentName="InstallMaidModuleBase"><defName>InstallMaidModule_Combat</defName><label>install combat module</label><description>Install a tactical combat module chip into the maid's brain receptor.</description><jobString>Installing combat module.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Combat</li></thingDefs></filter><count>1</count></li></ingredients><addsHediff>MaidModule_Combat</addsHediff></RecipeDef>
+  <!-- High Upgrade Recipe Parent (Stat 12) -->
+  <RecipeDef Name="UpgradeMaidHighBase" ParentName="UpgradeMaidBasicBase" Abstract="True">
+    <ingredients Inherit="False">
+      <li>
+        <filter><thingDefs><li>SubcoreHigh</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <researchPrerequisite>HighMechtech</researchPrerequisite>
+  </RecipeDef>
 
-  <!-- ==================== Direct Upgrade Recipes (At the Bench) ==================== -->
-  <RecipeDef Name="UpgradeMaidBase" Abstract="True">
-    <workAmount>2500</workAmount>
+  <!-- Ultra Upgrade Recipe Parent (Stat 15) -->
+  <RecipeDef Name="UpgradeMaidUltraBase" ParentName="UpgradeMaidBasicBase" Abstract="True">
+    <ingredients Inherit="False">
+      <li>
+        <filter><thingDefs><li>SubcoreHigh</li></thingDefs></filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <researchPrerequisite>UltraMechtech</researchPrerequisite>
+  </RecipeDef>
+
+  <!-- Basic Upgrade Recipes -->
+  <RecipeDef ParentName="UpgradeMaidBasicBase"><defName>UpgradeMaid_Combat_Basic</defName><label>direct install basic combat module</label><description>Directly install the basic combat module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid combat routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidBasicBase"><defName>UpgradeMaid_Rescue_Basic</defName><label>direct install basic rescue module</label><description>Directly install the basic rescue module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid rescue routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidBasicBase"><defName>UpgradeMaid_Domestic_Basic</defName><label>direct install basic domestic module</label><description>Directly install the basic domestic module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid domestic routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidBasicBase"><defName>UpgradeMaid_Work_Basic</defName><label>direct install basic work module</label><description>Directly install the basic work module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid work routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidBasicBase"><defName>UpgradeMaid_Research_Basic</defName><label>direct install basic research module</label><description>Directly install the basic research module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid research routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidBasicBase"><defName>UpgradeMaid_Agriculture_Basic</defName><label>direct install basic agriculture module</label><description>Directly install the basic agriculture module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid agriculture routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidBasicBase"><defName>UpgradeMaid_Crafting_Basic</defName><label>direct install basic crafting module</label><description>Directly install the basic crafting module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid crafting routines.</jobString></RecipeDef>
+
+  <!-- Standard Upgrade Recipes -->
+  <RecipeDef ParentName="UpgradeMaidStandardBase"><defName>UpgradeMaid_Combat_Standard</defName><label>direct install standard combat module</label><description>Directly install the standard combat module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid combat routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidStandardBase"><defName>UpgradeMaid_Rescue_Standard</defName><label>direct install standard rescue module</label><description>Directly install the standard rescue module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid rescue routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidStandardBase"><defName>UpgradeMaid_Domestic_Standard</defName><label>direct install standard domestic module</label><description>Directly install the standard domestic module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid domestic routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidStandardBase"><defName>UpgradeMaid_Work_Standard</defName><label>direct install standard work module</label><description>Directly install the standard work module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid work routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidStandardBase"><defName>UpgradeMaid_Research_Standard</defName><label>direct install standard research module</label><description>Directly install the standard research module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid research routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidStandardBase"><defName>UpgradeMaid_Agriculture_Standard</defName><label>direct install standard agriculture module</label><description>Directly install the standard agriculture module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid agriculture routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidStandardBase"><defName>UpgradeMaid_Crafting_Standard</defName><label>direct install standard crafting module</label><description>Directly install the standard crafting module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid crafting routines.</jobString></RecipeDef>
+
+  <!-- High Upgrade Recipes -->
+  <RecipeDef ParentName="UpgradeMaidHighBase"><defName>UpgradeMaid_Combat_High</defName><label>direct install high combat module</label><description>Directly install the high combat module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid combat routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidHighBase"><defName>UpgradeMaid_Rescue_High</defName><label>direct install high rescue module</label><description>Directly install the high rescue module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid rescue routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidHighBase"><defName>UpgradeMaid_Domestic_High</defName><label>direct install high domestic module</label><description>Directly install the high domestic module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid domestic routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidHighBase"><defName>UpgradeMaid_Work_High</defName><label>direct install high work module</label><description>Directly install the high work module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid work routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidHighBase"><defName>UpgradeMaid_Research_High</defName><label>direct install high research module</label><description>Directly install the high research module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid research routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidHighBase"><defName>UpgradeMaid_Agriculture_High</defName><label>direct install high agriculture module</label><description>Directly install the high agriculture module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid agriculture routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidHighBase"><defName>UpgradeMaid_Crafting_High</defName><label>direct install high crafting module</label><description>Directly install the high crafting module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid crafting routines.</jobString></RecipeDef>
+
+  <!-- Ultra Upgrade Recipes -->
+  <RecipeDef ParentName="UpgradeMaidUltraBase"><defName>UpgradeMaid_Combat_Ultra</defName><label>direct install ultra combat module</label><description>Directly install the ultra combat module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid combat routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidUltraBase"><defName>UpgradeMaid_Rescue_Ultra</defName><label>direct install ultra rescue module</label><description>Directly install the ultra rescue module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid rescue routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidUltraBase"><defName>UpgradeMaid_Domestic_Ultra</defName><label>direct install ultra domestic module</label><description>Directly install the ultra domestic module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid domestic routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidUltraBase"><defName>UpgradeMaid_Work_Ultra</defName><label>direct install ultra work module</label><description>Directly install the ultra work module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid work routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidUltraBase"><defName>UpgradeMaid_Research_Ultra</defName><label>direct install ultra research module</label><description>Directly install the ultra research module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid research routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidUltraBase"><defName>UpgradeMaid_Agriculture_Ultra</defName><label>direct install ultra agriculture module</label><description>Directly install the ultra agriculture module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid agriculture routines.</jobString></RecipeDef>
+  <RecipeDef ParentName="UpgradeMaidUltraBase"><defName>UpgradeMaid_Crafting_Ultra</defName><label>direct install ultra crafting module</label><description>Directly install the ultra crafting module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid crafting routines.</jobString></RecipeDef>
+
+  <!-- ==================== Direct Module Removals (At the Bench) ==================== -->
+  <RecipeDef Name="RemoveMaidBase" Abstract="True">
+    <workAmount>1500</workAmount>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <workSkill>Crafting</workSkill>
     <effectWorking>Cook</effectWorking>
     <soundWorking>Recipe_Machining</soundWorking>
   </RecipeDef>
 
-  <RecipeDef ParentName="UpgradeMaidBase"><defName>UpgradeMaid_Cook</defName><label>direct install culinary module</label><description>Directly install the culinary module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid culinary routines.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Cook</li></thingDefs></filter><count>1</count></li></ingredients></RecipeDef>
-  <RecipeDef ParentName="UpgradeMaidBase"><defName>UpgradeMaid_Grow</defName><label>direct install gardening module</label><description>Directly install the gardening module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid gardening routines.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Grow</li></thingDefs></filter><count>1</count></li></ingredients></RecipeDef>
-  <RecipeDef ParentName="UpgradeMaidBase"><defName>UpgradeMaid_Craft</defName><label>direct install tailoring module</label><description>Directly install the tailoring module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid tailoring routines.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Craft</li></thingDefs></filter><count>1</count></li></ingredients></RecipeDef>
-  <RecipeDef ParentName="UpgradeMaidBase"><defName>UpgradeMaid_Mine</defName><label>direct install excavation module</label><description>Directly install the excavation module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid excavation routines.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Mine</li></thingDefs></filter><count>1</count></li></ingredients></RecipeDef>
-  <RecipeDef ParentName="UpgradeMaidBase"><defName>UpgradeMaid_Construct</defName><label>direct install construction module</label><description>Directly install the construction module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid construction routines.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Construct</li></thingDefs></filter><count>1</count></li></ingredients></RecipeDef>
-  <RecipeDef ParentName="UpgradeMaidBase"><defName>UpgradeMaid_Art</defName><label>direct install artistic module</label><description>Directly install the artistic module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid artistic routines.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Art</li></thingDefs></filter><count>1</count></li></ingredients></RecipeDef>
-  <RecipeDef ParentName="UpgradeMaidBase"><defName>UpgradeMaid_Warden</defName><label>direct install warden module</label><description>Directly install the warden module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid warden routines.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Warden</li></thingDefs></filter><count>1</count></li></ingredients></RecipeDef>
-  <RecipeDef ParentName="UpgradeMaidBase"><defName>UpgradeMaid_Research</defName><label>direct install research module</label><description>Directly install the research module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid research routines.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Research</li></thingDefs></filter><count>1</count></li></ingredients></RecipeDef>
-  <RecipeDef ParentName="UpgradeMaidBase"><defName>UpgradeMaid_Doctor</defName><label>direct install medical module</label><description>Directly install the medical module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid medical routines.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Doctor</li></thingDefs></filter><count>1</count></li></ingredients></RecipeDef>
-  <RecipeDef ParentName="UpgradeMaidBase"><defName>UpgradeMaid_Combat</defName><label>direct install combat module</label><description>Directly install the combat module onto a maid mechanoid placed at the bench.</description><jobString>Upgrading maid combat routines.</jobString><ingredients><li><filter><thingDefs><li>MaidChip_Combat</li></thingDefs></filter><count>1</count></li></ingredients></RecipeDef>
+  <RecipeDef ParentName="RemoveMaidBase"><defName>RemoveMaid_Combat</defName><label>extract combat module</label><description>Extract the combat module from a maid mechanoid placed at the bench.</description><jobString>Extracting combat module.</jobString></RecipeDef>
+  <RecipeDef ParentName="RemoveMaidBase"><defName>RemoveMaid_Rescue</defName><label>extract rescue module</label><description>Extract the rescue module from a maid mechanoid placed at the bench.</description><jobString>Extracting rescue module.</jobString></RecipeDef>
+  <RecipeDef ParentName="RemoveMaidBase"><defName>RemoveMaid_Domestic</defName><label>extract domestic module</label><description>Extract the domestic module from a maid mechanoid placed at the bench.</description><jobString>Extracting domestic module.</jobString></RecipeDef>
+  <RecipeDef ParentName="RemoveMaidBase"><defName>RemoveMaid_Work</defName><label>extract work module</label><description>Extract the work module from a maid mechanoid placed at the bench.</description><jobString>Extracting work module.</jobString></RecipeDef>
+  <RecipeDef ParentName="RemoveMaidBase"><defName>RemoveMaid_Research</defName><label>extract research module</label><description>Extract the research module from a maid mechanoid placed at the bench.</description><jobString>Extracting research module.</jobString></RecipeDef>
+  <RecipeDef ParentName="RemoveMaidBase"><defName>RemoveMaid_Agriculture</defName><label>extract agriculture module</label><description>Extract the agriculture module from a maid mechanoid placed at the bench.</description><jobString>Extracting agriculture module.</jobString></RecipeDef>
+  <RecipeDef ParentName="RemoveMaidBase"><defName>RemoveMaid_Crafting</defName><label>extract crafting module</label><description>Extract the crafting module from a maid mechanoid placed at the bench.</description><jobString>Extracting crafting module.</jobString></RecipeDef>
 
   <!-- ==================== Custom Enter Bench Job ==================== -->
   <JobDef>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Mech_Maid_Basic.label>기본형 메이드 메카노이드</Mech_Maid_Basic.label>
+  <Mech_Maid_Standard.label>고급형 메이드 메카노이드</Mech_Maid_Standard.label>
+  <Mech_Maid_High.label>고성능 메이드 메카노이드</Mech_Maid_High.label>
+  <Mech_Maid_Ultra.label>초고성능 메이드 메카노이드</Mech_Maid_Ultra.label>
+</LanguageData>

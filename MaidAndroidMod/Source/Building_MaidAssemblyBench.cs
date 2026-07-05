@@ -42,7 +42,7 @@ namespace MaidAndroidMod
         // Accepts check
         public bool Accepts(Pawn pawn)
         {
-            return pawn != null && pawn.def.defName == "Mech_Maid" && pawn.Faction == Faction.OfPlayer && !pawn.Dead;
+            return pawn != null && MaidUtility.IsMaid(pawn) && pawn.Faction == Faction.OfPlayer && !pawn.Dead;
         }
 
         // Load the maid into the container
@@ -86,6 +86,21 @@ namespace MaidAndroidMod
             base.PostDestroy(mode, previousMap);
         }
 
+        public override void PostDraw()
+        {
+            base.PostDraw();
+            if (HasMaid)
+            {
+                Pawn maid = ContainedMaid;
+                if (maid != null)
+                {
+                    UnityEngine.Vector3 drawPos = parent.DrawPos;
+                    drawPos.y += 0.05f; // Draw slightly above the bench
+                    maid.Drawer.renderer.RenderPawnAt(drawPos);
+                }
+            }
+        }
+
         // Tick controller (check if the pathing maid has arrived at the bench to trigger auto-boarding!)
         public override void CompTick()
         {
@@ -112,9 +127,12 @@ namespace MaidAndroidMod
         // Gizmo button (Select Mechanoid for Maintenance)
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            foreach (var g in base.CompGetGizmosExtra())
+            if (base.CompGetGizmosExtra() != null)
             {
-                yield return g;
+                foreach (var g in base.CompGetGizmosExtra())
+                {
+                    yield return g;
+                }
             }
 
             // A: Select Mech button if empty
@@ -133,7 +151,7 @@ namespace MaidAndroidMod
                         {
                             foreach (var p in map.mapPawns.AllPawnsSpawned)
                             {
-                                if (p.def.defName == "Mech_Maid" && p.Faction == Faction.OfPlayer && !p.Dead)
+                                if (p != null && MaidUtility.IsMaid(p) && p.Faction == Faction.OfPlayer && !p.Dead)
                                 {
                                     Pawn maid = p;
                                     string text = maid.LabelShort;
@@ -174,6 +192,25 @@ namespace MaidAndroidMod
                     action = delegate
                     {
                         EjectMaid();
+                    }
+                };
+            }
+
+            // C: Cancel movement if moving
+            if (targetMaidToEnter != null && !HasMaid)
+            {
+                yield return new Command_Action
+                {
+                    defaultLabel = "정비 지시 취소",
+                    defaultDesc = "이동 중인 메이드 메카노이드의 정비 지시를 취소합니다.",
+                    icon = ContentFinder<UnityEngine.Texture2D>.Get("UI/Designators/Cancel", false) ?? TexCommand.ClearPrioritizedWork,
+                    action = delegate
+                    {
+                        if (targetMaidToEnter.CurJobDef?.defName == "EnterMaidBench")
+                        {
+                            targetMaidToEnter.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                        }
+                        targetMaidToEnter = null;
                     }
                 };
             }

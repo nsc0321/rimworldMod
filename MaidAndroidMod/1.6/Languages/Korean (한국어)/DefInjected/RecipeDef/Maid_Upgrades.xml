@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Combat Module -->
+  <UpgradeMaid_Combat_Basic.label>기초 전투 모듈 장착</UpgradeMaid_Combat_Basic.label>
+  <UpgradeMaid_Combat_Basic.description>설치대 내부의 메이드 메카노이드에게 기초 전투 모듈을 장착합니다.</UpgradeMaid_Combat_Basic.description>
+  <UpgradeMaid_Combat_Basic.jobString>전투 모듈 장착 중.</UpgradeMaid_Combat_Basic.jobString>
+  
+  <UpgradeMaid_Combat_Standard.label>표준 전투 모듈 장착</UpgradeMaid_Combat_Standard.label>
+  <UpgradeMaid_Combat_Standard.description>설치대 내부의 메이드 메카노이드에게 표준 전투 모듈을 장착합니다.</UpgradeMaid_Combat_Standard.description>
+  <UpgradeMaid_Combat_Standard.jobString>전투 모듈 장착 중.</UpgradeMaid_Combat_Standard.jobString>
+  
+  <UpgradeMaid_Combat_High.label>고급 전투 모듈 장착</UpgradeMaid_Combat_High.label>
+  <UpgradeMaid_Combat_High.description>설치대 내부의 메이드 메카노이드에게 고급 전투 모듈을 장착합니다.</UpgradeMaid_Combat_High.description>
+  <UpgradeMaid_Combat_High.jobString>전투 모듈 장착 중.</UpgradeMaid_Combat_High.jobString>
+  
+  <UpgradeMaid_Combat_Ultra.label>초고급 전투 모듈 장착</UpgradeMaid_Combat_Ultra.label>
+  <UpgradeMaid_Combat_Ultra.description>설치대 내부의 메이드 메카노이드에게 초고급 전투 모듈을 장착합니다.</UpgradeMaid_Combat_Ultra.description>
+  <UpgradeMaid_Combat_Ultra.jobString>전투 모듈 장착 중.</UpgradeMaid_Combat_Ultra.jobString>
+
+  <RemoveMaid_Combat.label>전투 모듈 적출</RemoveMaid_Combat.label>
+  <RemoveMaid_Combat.description>설치대 내부의 메이드 메카노이드에게서 전투 모듈을 안전하게 빼냅니다.</RemoveMaid_Combat.description>
+  <RemoveMaid_Combat.jobString>전투 모듈 적출 중.</RemoveMaid_Combat.jobString>
+
+  <!-- Rescue Module -->
+  <UpgradeMaid_Rescue_Basic.label>기초 구조 모듈 장착</UpgradeMaid_Rescue_Basic.label>
+  <UpgradeMaid_Rescue_Basic.description>설치대 내부의 메이드 메카노이드에게 기초 구조 모듈을 장착합니다.</UpgradeMaid_Rescue_Basic.description>
+  <UpgradeMaid_Rescue_Basic.jobString>구조 모듈 장착 중.</UpgradeMaid_Rescue_Basic.jobString>
+  
+  <UpgradeMaid_Rescue_Standard.label>표준 구조 모듈 장착</UpgradeMaid_Rescue_Standard.label>
+  <UpgradeMaid_Rescue_Standard.description>설치대 내부의 메이드 메카노이드에게 표준 구조 모듈을 장착합니다.</UpgradeMaid_Rescue_Standard.description>
+  <UpgradeMaid_Rescue_Standard.jobString>구조 모듈 장착 중.</UpgradeMaid_Rescue_Standard.jobString>
+  
+  <UpgradeMaid_Rescue_High.label>고급 구조 모듈 장착</UpgradeMaid_Rescue_High.label>
+  <UpgradeMaid_Rescue_High.description>설치대 내부의 메이드 메카노이드에게 고급 구조 모듈을 장착합니다.</UpgradeMaid_Rescue_High.description>
+  <UpgradeMaid_Rescue_High.jobString>구조 모듈 장착 중.</UpgradeMaid_Rescue_High.jobString>
+  
+  <UpgradeMaid_Rescue_Ultra.label>초고급 구조 모듈 장착</UpgradeMaid_Rescue_Ultra.label>
+  <UpgradeMaid_Rescue_Ultra.description>설치대 내부의 메이드 메카노이드에게 초고급 구조 모듈을 장착합니다.</UpgradeMaid_Rescue_Ultra.description>
+  <UpgradeMaid_Rescue_Ultra.jobString>구조 모듈 장착 중.</UpgradeMaid_Rescue_Ultra.jobString>
+
+  <RemoveMaid_Rescue.label>구조 모듈 적출</RemoveMaid_Rescue.label>
+  <RemoveMaid_Rescue.description>설치대 내부의 메이드 메카노이드에게서 구조 모듈을 안전하게 빼냅니다.</RemoveMaid_Rescue.description>
+  <RemoveMaid_Rescue.jobString>구조 모듈 적출 중.</RemoveMaid_Rescue.jobString>
+
+  <!-- Domestic Module -->
+  <UpgradeMaid_Domestic_Basic.label>기초 가사 모듈 장착</UpgradeMaid_Domestic_Basic.label>
+  <UpgradeMaid_Domestic_Basic.description>설치대 내부의 메이드 메카노이드에게 기초 가사 모듈을 장착합니다.</UpgradeMaid_Domestic_Basic.description>
+  <UpgradeMaid_Domestic_Basic.jobString>가사 모듈 장착 중.</UpgradeMaid_Domestic_Basic.jobString>
+  
+  <UpgradeMaid_Domestic_Standard.label>표준 가사 모듈 장착</UpgradeMaid_Domestic_Standard.label>
+  <UpgradeMaid_Domestic_Standard.description>설치대 내부의 메이드 메카노이드에게 표준 가사 모듈을 장착합니다.</UpgradeMaid_Domestic_Standard.description>
+  <UpgradeMaid_Domestic_Standard.jobString>가사 모듈 장착 중.</UpgradeMaid_Domestic_Standard.jobString>
+  
+  <UpgradeMaid_Domestic_High.label>고급 가사 모듈 장착</UpgradeMaid_Domestic_High.label>
+  <UpgradeMaid_Domestic_High.description>설치대 내부의 메이드 메카노이드에게 고급 가사 모듈을 장착합니다.</UpgradeMaid_Domestic_High.description>
+  <UpgradeMaid_Domestic_High.jobString>가사 모듈 장착 중.</UpgradeMaid_Domestic_High.jobString>
+  
+  <UpgradeMaid_Domestic_Ultra.label>초고급 가사 모듈 장착</UpgradeMaid_Domestic_Ultra.label>
+  <UpgradeMaid_Domestic_Ultra.description>설치대 내부의 메이드 메카노이드에게 초고급 가사 모듈을 장착합니다.</UpgradeMaid_Domestic_Ultra.description>
+  <UpgradeMaid_Domestic_Ultra.jobString>가사 모듈 장착 중.</UpgradeMaid_Domestic_Ultra.jobString>
+
+  <RemoveMaid_Domestic.label>가사 모듈 적출</RemoveMaid_Domestic.label>
+  <RemoveMaid_Domestic.description>설치대 내부의 메이드 메카노이드에게서 가사 모듈을 안전하게 빼냅니다.</RemoveMaid_Domestic.description>
+  <RemoveMaid_Domestic.jobString>가사 모듈 적출 중.</RemoveMaid_Domestic.jobString>
+
+  <!-- Work Module -->
+  <UpgradeMaid_Work_Basic.label>기초 작업 모듈 장착</UpgradeMaid_Work_Basic.label>
+  <UpgradeMaid_Work_Basic.description>설치대 내부의 메이드 메카노이드에게 기초 작업 모듈을 장착합니다.</UpgradeMaid_Work_Basic.description>
+  <UpgradeMaid_Work_Basic.jobString>작업 모듈 장착 중.</UpgradeMaid_Work_Basic.jobString>
+  
+  <UpgradeMaid_Work_Standard.label>표준 작업 모듈 장착</UpgradeMaid_Work_Standard.label>
+  <UpgradeMaid_Work_Standard.description>설치대 내부의 메이드 메카노이드에게 표준 작업 모듈을 장착합니다.</UpgradeMaid_Work_Standard.description>
+  <UpgradeMaid_Work_Standard.jobString>작업 모듈 장착 중.</UpgradeMaid_Work_Standard.jobString>
+  
+  <UpgradeMaid_Work_High.label>고급 작업 모듈 장착</UpgradeMaid_Work_High.label>
+  <UpgradeMaid_Work_High.description>설치대 내부의 메이드 메카노이드에게 고급 작업 모듈을 장착합니다.</UpgradeMaid_Work_High.description>
+  <UpgradeMaid_Work_High.jobString>작업 모듈 장착 중.</UpgradeMaid_Work_High.jobString>
+  
+  <UpgradeMaid_Work_Ultra.label>초고급 작업 모듈 장착</UpgradeMaid_Work_Ultra.label>
+  <UpgradeMaid_Work_Ultra.description>설치대 내부의 메이드 메카노이드에게 초고급 작업 모듈을 장착합니다.</UpgradeMaid_Work_Ultra.description>
+  <UpgradeMaid_Work_Ultra.jobString>작업 모듈 장착 중.</UpgradeMaid_Work_Ultra.jobString>
+
+  <RemoveMaid_Work.label>작업 모듈 적출</RemoveMaid_Work.label>
+  <RemoveMaid_Work.description>설치대 내부의 메이드 메카노이드에게서 작업 모듈을 안전하게 빼냅니다.</RemoveMaid_Work.description>
+  <RemoveMaid_Work.jobString>작업 모듈 적출 중.</RemoveMaid_Work.jobString>
+
+  <!-- Research Module -->
+  <UpgradeMaid_Research_Basic.label>기초 연구 모듈 장착</UpgradeMaid_Research_Basic.label>
+  <UpgradeMaid_Research_Basic.description>설치대 내부의 메이드 메카노이드에게 기초 연구 모듈을 장착합니다.</UpgradeMaid_Research_Basic.description>
+  <UpgradeMaid_Research_Basic.jobString>연구 모듈 장착 중.</UpgradeMaid_Research_Basic.jobString>
+  
+  <UpgradeMaid_Research_Standard.label>표준 연구 모듈 장착</UpgradeMaid_Research_Standard.label>
+  <UpgradeMaid_Research_Standard.description>설치대 내부의 메이드 메카노이드에게 표준 연구 모듈을 장착합니다.</UpgradeMaid_Research_Standard.description>
+  <UpgradeMaid_Research_Standard.jobString>연구 모듈 장착 중.</UpgradeMaid_Research_Standard.jobString>
+  
+  <UpgradeMaid_Research_High.label>고급 연구 모듈 장착</UpgradeMaid_Research_High.label>
+  <UpgradeMaid_Research_High.description>설치대 내부의 메이드 메카노이드에게 고급 연구 모듈을 장착합니다.</UpgradeMaid_Research_High.description>
+  <UpgradeMaid_Research_High.jobString>연구 모듈 장착 중.</UpgradeMaid_Research_High.jobString>
+  
+  <UpgradeMaid_Research_Ultra.label>초고급 연구 모듈 장착</UpgradeMaid_Research_Ultra.label>
+  <UpgradeMaid_Research_Ultra.description>설치대 내부의 메이드 메카노이드에게 초고급 연구 모듈을 장착합니다.</UpgradeMaid_Research_Ultra.description>
+  <UpgradeMaid_Research_Ultra.jobString>연구 모듈 장착 중.</UpgradeMaid_Research_Ultra.jobString>
+
+  <RemoveMaid_Research.label>연구 모듈 적출</RemoveMaid_Research.label>
+  <RemoveMaid_Research.description>설치대 내부의 메이드 메카노이드에게서 연구 모듈을 안전하게 빼냅니다.</RemoveMaid_Research.description>
+  <RemoveMaid_Research.jobString>연구 모듈 적출 중.</RemoveMaid_Research.jobString>
+
+  <!-- Agriculture Module -->
+  <UpgradeMaid_Agriculture_Basic.label>기초 농업 모듈 장착</UpgradeMaid_Agriculture_Basic.label>
+  <UpgradeMaid_Agriculture_Basic.description>설치대 내부의 메이드 메카노이드에게 기초 농업 모듈을 장착합니다.</UpgradeMaid_Agriculture_Basic.description>
+  <UpgradeMaid_Agriculture_Basic.jobString>농업 모듈 장착 중.</UpgradeMaid_Agriculture_Basic.jobString>
+  
+  <UpgradeMaid_Agriculture_Standard.label>표준 농업 모듈 장착</UpgradeMaid_Agriculture_Standard.label>
+  <UpgradeMaid_Agriculture_Standard.description>설치대 내부의 메이드 메카노이드에게 표준 농업 모듈을 장착합니다.</UpgradeMaid_Agriculture_Standard.description>
+  <UpgradeMaid_Agriculture_Standard.jobString>농업 모듈 장착 중.</UpgradeMaid_Agriculture_Standard.jobString>
+  
+  <UpgradeMaid_Agriculture_High.label>고급 농업 모듈 장착</UpgradeMaid_Agriculture_High.label>
+  <UpgradeMaid_Agriculture_High.description>설치대 내부의 메이드 메카노이드에게 고급 농업 모듈을 장착합니다.</UpgradeMaid_Agriculture_High.description>
+  <UpgradeMaid_Agriculture_High.jobString>농업 모듈 장착 중.</UpgradeMaid_Agriculture_High.jobString>
+  
+  <UpgradeMaid_Agriculture_Ultra.label>초고급 농업 모듈 장착</UpgradeMaid_Agriculture_Ultra.label>
+  <UpgradeMaid_Agriculture_Ultra.description>설치대 내부의 메이드 메카노이드에게 초고급 농업 모듈을 장착합니다.</UpgradeMaid_Agriculture_Ultra.description>
+  <UpgradeMaid_Agriculture_Ultra.jobString>농업 모듈 장착 중.</UpgradeMaid_Agriculture_Ultra.jobString>
+
+  <RemoveMaid_Agriculture.label>농업 모듈 적출</RemoveMaid_Agriculture.label>
+  <RemoveMaid_Agriculture.description>설치대 내부의 메이드 메카노이드에게서 농업 모듈을 안전하게 빼냅니다.</RemoveMaid_Agriculture.description>
+  <RemoveMaid_Agriculture.jobString>농업 모듈 적출 중.</RemoveMaid_Agriculture.jobString>
+
+  <!-- Crafting Module -->
+  <UpgradeMaid_Crafting_Basic.label>기초 제작 모듈 장착</UpgradeMaid_Crafting_Basic.label>
+  <UpgradeMaid_Crafting_Basic.description>설치대 내부의 메이드 메카노이드에게 기초 제작 모듈을 장착합니다.</UpgradeMaid_Crafting_Basic.description>
+  <UpgradeMaid_Crafting_Basic.jobString>제작 모듈 장착 중.</UpgradeMaid_Crafting_Basic.jobString>
+  
+  <UpgradeMaid_Crafting_Standard.label>표준 제작 모듈 장착</UpgradeMaid_Crafting_Standard.label>
+  <UpgradeMaid_Crafting_Standard.description>설치대 내부의 메이드 메카노이드에게 표준 제작 모듈을 장착합니다.</UpgradeMaid_Crafting_Standard.description>
+  <UpgradeMaid_Crafting_Standard.jobString>제작 모듈 장착 중.</UpgradeMaid_Crafting_Standard.jobString>
+  
+  <UpgradeMaid_Crafting_High.label>고급 제작 모듈 장착</UpgradeMaid_Crafting_High.label>
+  <UpgradeMaid_Crafting_High.description>설치대 내부의 메이드 메카노이드에게 고급 제작 모듈을 장착합니다.</UpgradeMaid_Crafting_High.description>
+  <UpgradeMaid_Crafting_High.jobString>제작 모듈 장착 중.</UpgradeMaid_Crafting_High.jobString>
+  
+  <UpgradeMaid_Crafting_Ultra.label>초고급 제작 모듈 장착</UpgradeMaid_Crafting_Ultra.label>
+  <UpgradeMaid_Crafting_Ultra.description>설치대 내부의 메이드 메카노이드에게 초고급 제작 모듈을 장착합니다.</UpgradeMaid_Crafting_Ultra.description>
+  <UpgradeMaid_Crafting_Ultra.jobString>제작 모듈 장착 중.</UpgradeMaid_Crafting_Ultra.jobString>
+
+  <RemoveMaid_Crafting.label>제작 모듈 적출</RemoveMaid_Crafting.label>
+  <RemoveMaid_Crafting.description>설치대 내부의 메이드 메카노이드에게서 제작 모듈을 안전하게 빼냅니다.</RemoveMaid_Crafting.description>
+  <RemoveMaid_Crafting.jobString>제작 모듈 적출 중.</RemoveMaid_Crafting.jobString>
+</LanguageData>

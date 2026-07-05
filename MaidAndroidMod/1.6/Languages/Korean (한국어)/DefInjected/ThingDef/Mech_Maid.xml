@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Mech_Maid_Basic.label>기본형 메이드 메카노이드</Mech_Maid_Basic.label>
+  <Mech_Maid_Basic.description>기초 등급의 가사 및 노동용 메카노이드입니다. 기본적으로 청소와 운반을 수행하며, 머리에 2개의 메모리 모듈을 장착하여 다른 전문적인 가사 작업을 수행할 수 있습니다.</Mech_Maid_Basic.description>
+
+  <Mech_Maid_Standard.label>고급형 메이드 메카노이드</Mech_Maid_Standard.label>
+  <Mech_Maid_Standard.description>표준 등급의 가사 및 노동용 메카노이드입니다. 개선된 서보 드라이버를 탑재하였으며, 최대 3개의 메모리 모듈을 안전하게 구동할 수 있습니다.</Mech_Maid_Standard.description>
+
+  <Mech_Maid_High.label>고성능 메이드 메카노이드</Mech_Maid_High.label>
+  <Mech_Maid_High.description>고급 등급의 고성능 가사 메카노이드입니다. 튼튼한 장갑 구조와 고성능 프로세서가 탑재되어 최대 4개의 메모리 모듈을 지원합니다.</Mech_Maid_High.description>
+
+  <Mech_Maid_Ultra.label>초고성능 메이드 메카노이드</Mech_Maid_Ultra.label>
+  <Mech_Maid_Ultra.description>초고급 등급의 가사형 메카노이드 명품입니다. 최고 등급의 플라스틸 케이싱 및 골드 배선을 활용하여 최대 5개의 메모리 모듈을 동시에 운용할 수 있습니다.</Mech_Maid_Ultra.description>
+</LanguageData>

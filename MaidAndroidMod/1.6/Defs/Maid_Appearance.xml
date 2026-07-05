@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ==================== Maid Appearance Modification Station (BuildingDef) ==================== -->
+  <ThingDef ParentName="BenchBase">
+    <defName>MaidAppearanceStation</defName>
+    <label>maid appearance station</label>
+    <description>A mechanical paint-spraying and customization station designed to tune the exterior casings and skins of maid mechanoids.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Production/MaidAppearanceStation</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3.5, 2.5)</drawSize>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <costList>
+      <Steel>150</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <Plasteel>20</Plasteel>
+    </costList>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Mass>35</Mass>
+    </statBases>
+    <size>(3,2)</size>
+    <designationCategory>Biotech</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+    <researchPrerequisites>
+      <li>BasicMechtech</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>120</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="MaidAndroidMod.CompProperties_MaidAppearance"/>
+    </comps>
+  </ThingDef>
+
+  <!-- ==================== Custom Enter Appearance Station Job ==================== -->
+  <JobDef>
+    <defName>EnterMaidAppearanceStation</defName>
+    <driverClass>MaidAndroidMod.JobDriver_EnterMaidAppearanceStation</driverClass>
+    <reportString>Entering appearance customization station.</reportString>
+  </JobDef>
+
+  <!-- ==================== Maid Modification Overload (Consciousness Penalty) ==================== -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>MaidMod_ConsciousnessPenalty</defName>
+    <label>modification overload</label>
+    <description>The processing cores and power system are overloaded due to excessive performance enhancements without offsetting structural penalties. This limits maximum operational capacity.</description>
+    <initialSeverity>0</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>10</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0</minSeverity>
+        <label>stable</label>
+      </li>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>minor overload (level 1)</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>1.9</minSeverity>
+        <label>moderate overload (level 2)</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.20</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>2.9</minSeverity>
+        <label>serious overload (level 3)</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.30</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>3.9</minSeverity>
+        <label>severe overload (level 4)</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.40</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>4.9</minSeverity>
+        <label>extreme overload (level 5)</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.50</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>5.9</minSeverity>
+        <label>critical overload (level 6)</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.60</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>6.9</minSeverity>
+        <label>dangerous overload (level 7)</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.70</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>7.9</minSeverity>
+        <label>catastrophic overload (level 8)</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.80</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>8.9</minSeverity>
+        <label>system breakdown (level 9)</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.90</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ==================== Maid External Modifications (New Modular System) ==================== -->
+
+  <!-- 1. Optical Lens (Head) -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>MaidMod_OpticalLens</defName>
+    <label>optical lens modification</label>
+    <description>Optimized optical focus lenses that enhance target tracking and shooting accuracy.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <minSeverity>0.0</minSeverity>
+    <maxSeverity>5.0</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>basic</label>
+        <statOffsets>
+          <ShootingAccuracyPawn>1.0</ShootingAccuracyPawn>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>1.9</minSeverity>
+        <label>standard</label>
+        <statOffsets>
+          <ShootingAccuracyPawn>2.0</ShootingAccuracyPawn>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2.9</minSeverity>
+        <label>high-performance</label>
+        <statOffsets>
+          <ShootingAccuracyPawn>3.0</ShootingAccuracyPawn>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3.9</minSeverity>
+        <label>ultra-performance</label>
+        <statOffsets>
+          <ShootingAccuracyPawn>4.5</ShootingAccuracyPawn>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 2. Taste Sensor (Head) -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>MaidMod_TasteSensor</defName>
+    <label>taste sensor modification</label>
+    <description>External taste sensors that allow high precision flavor analysis and faster food preparation.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <minSeverity>0.0</minSeverity>
+    <maxSeverity>5.0</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>basic</label>
+        <statOffsets>
+          <CookSpeed>0.15</CookSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>1.9</minSeverity>
+        <label>standard</label>
+        <statOffsets>
+          <CookSpeed>0.30</CookSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2.9</minSeverity>
+        <label>high-performance</label>
+        <statOffsets>
+          <CookSpeed>0.45</CookSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3.9</minSeverity>
+        <label>ultra-performance</label>
+        <statOffsets>
+          <CookSpeed>0.60</CookSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 3. Smell Sensor (Head) -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>MaidMod_SmellSensor</defName>
+    <label>smell sensor modification</label>
+    <description>Advanced olfactory scanner that monitors ingredient freshness, reducing food poisoning rates.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <minSeverity>0.0</minSeverity>
+    <maxSeverity>5.0</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>basic</label>
+        <statOffsets>
+          <FoodPoisonChance>-0.10</FoodPoisonChance>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>1.9</minSeverity>
+        <label>standard</label>
+        <statOffsets>
+          <FoodPoisonChance>-0.25</FoodPoisonChance>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2.9</minSeverity>
+        <label>high-performance</label>
+        <statOffsets>
+          <FoodPoisonChance>-0.50</FoodPoisonChance>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3.9</minSeverity>
+        <label>ultra-performance</label>
+        <statOffsets>
+          <FoodPoisonChance>-0.75</FoodPoisonChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 4. Storage Module (Body) -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>MaidMod_StorageModule</defName>
+    <label>storage module modification</label>
+    <description>Integrated sub-casing compartments that expand temporary storage capacity during hauling operations.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <minSeverity>0.0</minSeverity>
+    <maxSeverity>5.0</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>basic</label>
+        <statOffsets>
+          <CarryingCapacity>15</CarryingCapacity>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>1.9</minSeverity>
+        <label>standard</label>
+        <statOffsets>
+          <CarryingCapacity>30</CarryingCapacity>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2.9</minSeverity>
+        <label>high-performance</label>
+        <statOffsets>
+          <CarryingCapacity>50</CarryingCapacity>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3.9</minSeverity>
+        <label>ultra-performance</label>
+        <statOffsets>
+          <CarryingCapacity>75</CarryingCapacity>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 5. Shock Absorber (Body) -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>MaidMod_ShockAbsorber</defName>
+    <label>shock absorber modification</label>
+    <description>High-grade kinetic absorption dampening systems that mitigate incoming blunt attacks.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <minSeverity>0.0</minSeverity>
+    <maxSeverity>5.0</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>basic</label>
+        <statOffsets>
+          <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>1.9</minSeverity>
+        <label>standard</label>
+        <statOffsets>
+          <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2.9</minSeverity>
+        <label>high-performance</label>
+        <statOffsets>
+          <ArmorRating_Blunt>0.30</ArmorRating_Blunt>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3.9</minSeverity>
+        <label>ultra-performance</label>
+        <statOffsets>
+          <ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 6. Battery (Body) -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>MaidMod_Battery</defName>
+    <label>battery optimization modification</label>
+    <description>High density auxiliary storage cells that optimize energy efficiency and reduce usage decay.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <minSeverity>0.0</minSeverity>
+    <maxSeverity>5.0</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>basic</label>
+        <statOffsets>
+          <MechEnergyUsageFactor>-0.10</MechEnergyUsageFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>1.9</minSeverity>
+        <label>standard</label>
+        <statOffsets>
+          <MechEnergyUsageFactor>-0.20</MechEnergyUsageFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2.9</minSeverity>
+        <label>high-performance</label>
+        <statOffsets>
+          <MechEnergyUsageFactor>-0.30</MechEnergyUsageFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3.9</minSeverity>
+        <label>ultra-performance</label>
+        <statOffsets>
+          <MechEnergyUsageFactor>-0.40</MechEnergyUsageFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 7. Fast Charger (Body) -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>MaidMod_FastCharger</defName>
+    <label>fast charger modification</label>
+    <description>Integrated power intake couplers that accelerate energy restoration while docked at charging docks.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <minSeverity>0.0</minSeverity>
+    <maxSeverity>5.0</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>basic</label>
+      </li>
+      <li>
+        <minSeverity>1.9</minSeverity>
+        <label>standard</label>
+      </li>
+      <li>
+        <minSeverity>2.9</minSeverity>
+        <label>high-performance</label>
+      </li>
+      <li>
+        <minSeverity>3.9</minSeverity>
+        <label>ultra-performance</label>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 8. Precision Sensor (Arm) -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>MaidMod_PrecisionSensor</defName>
+    <label>precision sensor modification</label>
+    <description>High precision servo calibration sensors in the arms, boosting general work speed.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <minSeverity>0.0</minSeverity>
+    <maxSeverity>5.0</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>basic</label>
+        <statOffsets>
+          <WorkSpeedGlobal>0.10</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>1.9</minSeverity>
+        <label>standard</label>
+        <statOffsets>
+          <WorkSpeedGlobal>0.20</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2.9</minSeverity>
+        <label>high-performance</label>
+        <statOffsets>
+          <WorkSpeedGlobal>0.30</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3.9</minSeverity>
+        <label>ultra-performance</label>
+        <statOffsets>
+          <WorkSpeedGlobal>0.45</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 9. Power Actuator (Arm) -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>MaidMod_PowerActuator</defName>
+    <label>power actuator modification</label>
+    <description>Pneumatic high-output actuators that enhance melee precision and armor penetration.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <minSeverity>0.0</minSeverity>
+    <maxSeverity>5.0</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>basic</label>
+        <statOffsets>
+          <MeleeHitChance>1.0</MeleeHitChance>
+          <MeleeArmorPenetration>0.10</MeleeArmorPenetration>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>1.9</minSeverity>
+        <label>standard</label>
+        <statOffsets>
+          <MeleeHitChance>2.0</MeleeHitChance>
+          <MeleeArmorPenetration>0.20</MeleeArmorPenetration>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2.9</minSeverity>
+        <label>high-performance</label>
+        <statOffsets>
+          <MeleeHitChance>3.0</MeleeHitChance>
+          <MeleeArmorPenetration>0.30</MeleeArmorPenetration>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3.9</minSeverity>
+        <label>ultra-performance</label>
+        <statOffsets>
+          <MeleeHitChance>4.5</MeleeHitChance>
+          <MeleeArmorPenetration>0.45</MeleeArmorPenetration>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 10. Mobility Equipment (Leg) -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>MaidMod_MobilityEquipment</defName>
+    <label>mobility equipment modification</label>
+    <description>Enhanced hydraulic leg structure that boosts locomotion and movement speed.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <minSeverity>0.0</minSeverity>
+    <maxSeverity>5.0</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>basic</label>
+        <statOffsets>
+          <MoveSpeed>0.4</MoveSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>1.9</minSeverity>
+        <label>standard</label>
+        <statOffsets>
+          <MoveSpeed>0.8</MoveSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2.9</minSeverity>
+        <label>high-performance</label>
+        <statOffsets>
+          <MoveSpeed>1.2</MoveSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3.9</minSeverity>
+        <label>ultra-performance</label>
+        <statOffsets>
+          <MoveSpeed>1.6</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 11. Armor - Head (Head Slot Armor) -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>MaidMod_Armor_Head</defName>
+    <label>head armor plating</label>
+    <description>External armor plating applied to the head module, increasing overall defense ratings.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <minSeverity>0.0</minSeverity>
+    <maxSeverity>5.0</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>basic</label>
+        <statOffsets>
+          <ArmorRating_Sharp>0.08</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.08</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>1.9</minSeverity>
+        <label>standard</label>
+        <statOffsets>
+          <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.15</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2.9</minSeverity>
+        <label>high-performance</label>
+        <statOffsets>
+          <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.25</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3.9</minSeverity>
+        <label>ultra-performance</label>
+        <statOffsets>
+          <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.40</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 12. Armor - Body (Body Slot Armor) -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>MaidMod_Armor_Body</defName>
+    <label>torso armor plating</label>
+    <description>External armor plating applied to the torso casing, increasing overall defense ratings.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <minSeverity>0.0</minSeverity>
+    <maxSeverity>5.0</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>basic</label>
+        <statOffsets>
+          <ArmorRating_Sharp>0.08</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.08</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>1.9</minSeverity>
+        <label>standard</label>
+        <statOffsets>
+          <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.15</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2.9</minSeverity>
+        <label>high-performance</label>
+        <statOffsets>
+          <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.25</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3.9</minSeverity>
+        <label>ultra-performance</label>
+        <statOffsets>
+          <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.40</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 13. Armor - Arm (Arm Slot Armor) -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>MaidMod_Armor_Arm</defName>
+    <label>arm armor plating</label>
+    <description>External armor plating applied to the arms, increasing overall defense ratings.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <minSeverity>0.0</minSeverity>
+    <maxSeverity>5.0</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>basic</label>
+        <statOffsets>
+          <ArmorRating_Sharp>0.08</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.08</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>1.9</minSeverity>
+        <label>standard</label>
+        <statOffsets>
+          <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.15</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2.9</minSeverity>
+        <label>high-performance</label>
+        <statOffsets>
+          <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.25</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3.9</minSeverity>
+        <label>ultra-performance</label>
+        <statOffsets>
+          <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.40</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 14. Armor - Leg (Leg Slot Armor) -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>MaidMod_Armor_Leg</defName>
+    <label>leg armor plating</label>
+    <description>External armor plating applied to the legs, increasing overall defense ratings.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <minSeverity>0.0</minSeverity>
+    <maxSeverity>5.0</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>basic</label>
+        <statOffsets>
+          <ArmorRating_Sharp>0.08</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.08</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>1.9</minSeverity>
+        <label>standard</label>
+        <statOffsets>
+          <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.15</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2.9</minSeverity>
+        <label>high-performance</label>
+        <statOffsets>
+          <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.25</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3.9</minSeverity>
+        <label>ultra-performance</label>
+        <statOffsets>
+          <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.40</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>
